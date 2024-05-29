@@ -6,8 +6,6 @@ import (
 	"net/http"
 	"strings"
 
-	"zero-fox-admin/api/admin/internal/common/errorx"
-
 	"github.com/zeromicro/go-zero/core/logc"
 	"github.com/zeromicro/go-zero/core/stores/redis"
 	"github.com/zeromicro/go-zero/rest/httpx"
