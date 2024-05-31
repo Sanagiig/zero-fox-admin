@@ -3,11 +3,10 @@ package user
 import (
 	"net/http"
 
+	"github.com/zeromicro/go-zero/rest/httpx"
 	"zero-fox-admin/api/admin/internal/logic/sys/user"
 	"zero-fox-admin/api/admin/internal/svc"
 	"zero-fox-admin/api/admin/internal/types"
-
-	"github.com/zeromicro/go-zero/rest/httpx"
 )
 
 func QueryAllRelationsHandler(svcCtx *svc.ServiceContext) http.HandlerFunc {
