@@ -6,7 +6,8 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/feihua/zero-admin/api/admin/internal/common/errorx"
+	"zero-fox-admin/api/admin/internal/common/errorx"
+
 	"github.com/zeromicro/go-zero/core/logc"
 	"github.com/zeromicro/go-zero/core/stores/redis"
 	"github.com/zeromicro/go-zero/rest/httpx"
@@ -16,8 +17,8 @@ type CheckUrlMiddleware struct {
 	Redis *redis.Redis
 }
 
-func NewCheckUrlMiddleware(Redis *redis.Redis) *CheckUrlMiddleware {
-	return &CheckUrlMiddleware{Redis: Redis}
+func NewCheckUrlMiddleware() *CheckUrlMiddleware {
+	return &CheckUrlMiddleware{}
 }
 
 func (m *CheckUrlMiddleware) Handle(next http.HandlerFunc) http.HandlerFunc {

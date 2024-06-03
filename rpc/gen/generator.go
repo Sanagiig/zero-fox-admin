@@ -2,6 +2,7 @@
 package main
 
 import (
+	"strings"
 	"zero-fox-admin/rpc/gen/apply_interface"
 
 	"gorm.io/driver/mysql"
@@ -10,12 +11,17 @@ import (
 )
 
 func main() {
-	// Initialize the generator with configuration
-	g := gen.NewGenerator(gen.Config{
+	config := gen.Config{
 		OutPath:       "./query", // output directory, default value is ./query
 		Mode:          gen.WithDefaultQuery | gen.WithQueryInterface,
 		FieldNullable: true,
+	}
+
+	config.WithJSONTagNameStrategy(func(columnName string) (tagContent string) {
+		sb := strings.Builder{buf: [len(columnName)]byte{}}
 	})
+	// Initialize the generator with configuration
+	g := gen.NewGenerator(config)
 
 	//var dsn = "root:123456@tcp(127.0.0.1:3306)/gozero?charset=utf8mb4&parseTime=true&loc=Asia%2FShanghai"
 	var dsn = "root:lwj@1993@tcp(localhost:3306)/zero-admin?charset=utf8mb4&parseTime=true&loc=Asia%2FShanghai"

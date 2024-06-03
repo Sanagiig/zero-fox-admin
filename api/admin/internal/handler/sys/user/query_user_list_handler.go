@@ -3,22 +3,23 @@ package user
 import (
 	"net/http"
 
-	"github.com/zeromicro/go-zero/rest/httpx"
 	"zero-fox-admin/api/admin/internal/logic/sys/user"
 	"zero-fox-admin/api/admin/internal/svc"
 	"zero-fox-admin/api/admin/internal/types"
+
+	"github.com/zeromicro/go-zero/rest/httpx"
 )
 
-func QueryAllRelationsHandler(svcCtx *svc.ServiceContext) http.HandlerFunc {
+func QueryUserListHandler(svcCtx *svc.ServiceContext) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
-		var req types.QueryAllRelationsReq
+		var req types.ListUserReq
 		if err := httpx.Parse(r, &req); err != nil {
 			httpx.ErrorCtx(r.Context(), w, err)
 			return
 		}
 
-		l := user.NewQueryAllRelationsLogic(r.Context(), svcCtx)
-		resp, err := l.QueryAllRelations(&req)
+		l := user.NewQueryUserListLogic(r.Context(), svcCtx)
+		resp, err := l.QueryUserList(&req)
 		if err != nil {
 			httpx.ErrorCtx(r.Context(), w, err)
 		} else {

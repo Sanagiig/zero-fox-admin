@@ -3,22 +3,23 @@ package user
 import (
 	"net/http"
 
-	"github.com/zeromicro/go-zero/rest/httpx"
 	"zero-fox-admin/api/admin/internal/logic/sys/user"
 	"zero-fox-admin/api/admin/internal/svc"
 	"zero-fox-admin/api/admin/internal/types"
+
+	"github.com/zeromicro/go-zero/rest/httpx"
 )
 
-func DeleteUserHandler(svcCtx *svc.ServiceContext) http.HandlerFunc {
+func QueryAllRelationsHandler(svcCtx *svc.ServiceContext) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
-		var req types.DeleteUserReq
+		var req types.QueryAllRelationsReq
 		if err := httpx.Parse(r, &req); err != nil {
 			httpx.ErrorCtx(r.Context(), w, err)
 			return
 		}
 
-		l := user.NewDeleteUserLogic(r.Context(), svcCtx)
-		resp, err := l.DeleteUser(&req)
+		l := user.NewQueryAllRelationsLogic(r.Context(), svcCtx)
+		resp, err := l.QueryAllRelations(&req)
 		if err != nil {
 			httpx.ErrorCtx(r.Context(), w, err)
 		} else {
