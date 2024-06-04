@@ -4,6 +4,14 @@ package handler
 import (
 	"net/http"
 
+	sysdept "zero-fox-admin/api/admin/internal/handler/sys/dept"
+	sysdict "zero-fox-admin/api/admin/internal/handler/sys/dict"
+	sysdict_item "zero-fox-admin/api/admin/internal/handler/sys/dict_item"
+	sysjob "zero-fox-admin/api/admin/internal/handler/sys/job"
+	syslog "zero-fox-admin/api/admin/internal/handler/sys/log"
+	sysmenu "zero-fox-admin/api/admin/internal/handler/sys/menu"
+	sysrole "zero-fox-admin/api/admin/internal/handler/sys/role"
+	sysupload "zero-fox-admin/api/admin/internal/handler/sys/upload"
 	sysuser "zero-fox-admin/api/admin/internal/handler/sys/user"
 	"zero-fox-admin/api/admin/internal/svc"
 
@@ -11,6 +19,246 @@ import (
 )
 
 func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
+	server.AddRoutes(
+		rest.WithMiddlewares(
+			[]rest.Middleware{serverCtx.CheckUrl},
+			[]rest.Route{
+				{
+					Method:  http.MethodPost,
+					Path:    "/addDept",
+					Handler: sysdept.AddDeptHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodGet,
+					Path:    "/deleteDept",
+					Handler: sysdept.DeleteDeptHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodGet,
+					Path:    "/queryDeptList",
+					Handler: sysdept.QueryDeptListHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodPost,
+					Path:    "/updateDept",
+					Handler: sysdept.UpdateDeptHandler(serverCtx),
+				},
+			}...,
+		),
+		rest.WithJwt(serverCtx.Config.Auth.AccessSecret),
+		rest.WithPrefix("/api/sys/dept"),
+	)
+
+	server.AddRoutes(
+		rest.WithMiddlewares(
+			[]rest.Middleware{serverCtx.CheckUrl},
+			[]rest.Route{
+				{
+					Method:  http.MethodPost,
+					Path:    "/addDict",
+					Handler: sysdict.AddDictHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodGet,
+					Path:    "/deleteDict",
+					Handler: sysdict.DeleteDictHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodGet,
+					Path:    "/queryDictList",
+					Handler: sysdict.QueryDictListHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodPost,
+					Path:    "/updateDict",
+					Handler: sysdict.UpdateDictHandler(serverCtx),
+				},
+			}...,
+		),
+		rest.WithJwt(serverCtx.Config.Auth.AccessSecret),
+		rest.WithPrefix("/api/sys/dict"),
+	)
+
+	server.AddRoutes(
+		rest.WithMiddlewares(
+			[]rest.Middleware{serverCtx.CheckUrl},
+			[]rest.Route{
+				{
+					Method:  http.MethodPost,
+					Path:    "/addDictItem",
+					Handler: sysdict_item.AddDictItemHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodGet,
+					Path:    "/deleteDictItem",
+					Handler: sysdict_item.DeleteDictItemHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodGet,
+					Path:    "/queryDictItemList",
+					Handler: sysdict_item.QueryDictItemListHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodPost,
+					Path:    "/updateDictItem",
+					Handler: sysdict_item.UpdateDictItemHandler(serverCtx),
+				},
+			}...,
+		),
+		rest.WithJwt(serverCtx.Config.Auth.AccessSecret),
+		rest.WithPrefix("/api/demo/dictItem"),
+	)
+
+	server.AddRoutes(
+		rest.WithMiddlewares(
+			[]rest.Middleware{serverCtx.CheckUrl},
+			[]rest.Route{
+				{
+					Method:  http.MethodPost,
+					Path:    "/addJob",
+					Handler: sysjob.AddJobHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodGet,
+					Path:    "/deleteJob",
+					Handler: sysjob.DeleteJobHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodGet,
+					Path:    "/queryJobList",
+					Handler: sysjob.QueryJobListHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodPost,
+					Path:    "/updateJob",
+					Handler: sysjob.UpdateJobHandler(serverCtx),
+				},
+			}...,
+		),
+		rest.WithJwt(serverCtx.Config.Auth.AccessSecret),
+		rest.WithPrefix("/api/sys/job"),
+	)
+
+	server.AddRoutes(
+		rest.WithMiddlewares(
+			[]rest.Middleware{serverCtx.CheckUrl},
+			[]rest.Route{
+				{
+					Method:  http.MethodGet,
+					Path:    "/deleteLoginLog",
+					Handler: syslog.DeleteLoginLogHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodGet,
+					Path:    "/deleteOperateLog",
+					Handler: syslog.DeleteOperateLogHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodGet,
+					Path:    "/queryLoginLogList",
+					Handler: syslog.QueryLoginLogListHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodGet,
+					Path:    "/queryOperateLogList",
+					Handler: syslog.QueryOperateLogListHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodGet,
+					Path:    "/statisticsLoginLog",
+					Handler: syslog.StatisticsLoginLogHandler(serverCtx),
+				},
+			}...,
+		),
+		rest.WithJwt(serverCtx.Config.Auth.AccessSecret),
+		rest.WithPrefix("/api/sys/log"),
+	)
+
+	server.AddRoutes(
+		rest.WithMiddlewares(
+			[]rest.Middleware{serverCtx.CheckUrl},
+			[]rest.Route{
+				{
+					Method:  http.MethodPost,
+					Path:    "/addMenu",
+					Handler: sysmenu.AddMenuHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodGet,
+					Path:    "/deleteMenu",
+					Handler: sysmenu.DeleteMenuHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodGet,
+					Path:    "/queryMenuList",
+					Handler: sysmenu.QueryMenuListHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodPost,
+					Path:    "/updateMenu",
+					Handler: sysmenu.UpdateMenuHandler(serverCtx),
+				},
+			}...,
+		),
+		rest.WithJwt(serverCtx.Config.Auth.AccessSecret),
+		rest.WithPrefix("/api/sys/menu"),
+	)
+
+	server.AddRoutes(
+		rest.WithMiddlewares(
+			[]rest.Middleware{serverCtx.CheckUrl},
+			[]rest.Route{
+				{
+					Method:  http.MethodPost,
+					Path:    "/addRole",
+					Handler: sysrole.AddRoleHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodGet,
+					Path:    "/deleteRole",
+					Handler: sysrole.DeleteRoleHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodGet,
+					Path:    "/queryRoleList",
+					Handler: sysrole.QueryRoleListHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodGet,
+					Path:    "/queryRoleMenuList",
+					Handler: sysrole.QueryRoleMenuListHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodPost,
+					Path:    "/updateRole",
+					Handler: sysrole.UpdateRoleHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodPost,
+					Path:    "/updateRoleMenuList",
+					Handler: sysrole.UpdateRoleMenuListHandler(serverCtx),
+				},
+			}...,
+		),
+		rest.WithJwt(serverCtx.Config.Auth.AccessSecret),
+		rest.WithPrefix("/api/sys/role"),
+	)
+
+	server.AddRoutes(
+		rest.WithMiddlewares(
+			[]rest.Middleware{serverCtx.CheckUrl},
+			[]rest.Route{
+				{
+					Method:  http.MethodPost,
+					Path:    "/upload",
+					Handler: sysupload.UploadHandler(serverCtx),
+				},
+			}...,
+		),
+		rest.WithJwt(serverCtx.Config.Auth.AccessSecret),
+		rest.WithPrefix("/api/sys"),
+	)
+
 	server.AddRoutes(
 		[]rest.Route{
 			{
