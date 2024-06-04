@@ -23,7 +23,7 @@ func NewQueryDeptListLogic(ctx context.Context, svcCtx *svc.ServiceContext) *Que
 	}
 }
 
-func (l *QueryDeptListLogic) QueryDeptList(req *types.ListDeptReq) (resp *types.ListDeptResp, err error) {
+func (l *QueryDeptListLogic) QueryDeptList(req *types.QueryDeptListReq) (resp *types.QueryDeptListResp, err error) {
 	// todo: add your logic here and delete this line
 
 	return

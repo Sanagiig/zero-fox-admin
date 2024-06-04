@@ -4,7 +4,7 @@ import (
 	"context"
 
 	"zero-fox-admin/rpc/sys/internal/svc"
-	"zero-fox-admin/rpc/sys/sys_client"
+	"zero-fox-admin/rpc/sys/sysclient"
 
 	"github.com/zeromicro/go-zero/core/logx"
 )
@@ -24,8 +24,8 @@ func NewQueryRoleMenuListLogic(ctx context.Context, svcCtx *svc.ServiceContext) 
 }
 
 // 查询用户与角色的关联
-func (l *QueryRoleMenuListLogic) QueryRoleMenuList(in *sys_client.QueryRoleMenuListReq) (*sys_client.QueryRoleMenuListResp, error) {
+func (l *QueryRoleMenuListLogic) QueryRoleMenuList(in *sysclient.QueryRoleMenuListReq) (*sysclient.QueryRoleMenuListResp, error) {
 	// todo: add your logic here and delete this line
 
-	return &sys_client.QueryRoleMenuListResp{}, nil
+	return &sysclient.QueryRoleMenuListResp{}, nil
 }

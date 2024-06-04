@@ -23,7 +23,7 @@ func NewQueryLoginLogListLogic(ctx context.Context, svcCtx *svc.ServiceContext) 
 	}
 }
 
-func (l *QueryLoginLogListLogic) QueryLoginLogList(req *types.ListLoginLogReq) (resp *types.ListLoginLogResp, err error) {
+func (l *QueryLoginLogListLogic) QueryLoginLogList(req *types.QueryLoginLogListReq) (resp *types.QueryLoginLogListResp, err error) {
 	// todo: add your logic here and delete this line
 
 	return

@@ -4,7 +4,7 @@ import (
 	"context"
 
 	"zero-fox-admin/rpc/sys/internal/svc"
-	"zero-fox-admin/rpc/sys/sys_client"
+	"zero-fox-admin/rpc/sys/sysclient"
 
 	"github.com/zeromicro/go-zero/core/logx"
 )
@@ -23,8 +23,9 @@ func NewReSetPasswordLogic(ctx context.Context, svcCtx *svc.ServiceContext) *ReS
 	}
 }
 
-func (l *ReSetPasswordLogic) ReSetPassword(in *sys_client.ReSetPasswordReq) (*sys_client.ReSetPasswordResp, error) {
+// 重置用户密码
+func (l *ReSetPasswordLogic) ReSetPassword(in *sysclient.ReSetPasswordReq) (*sysclient.ReSetPasswordResp, error) {
 	// todo: add your logic here and delete this line
 
-	return &sys_client.ReSetPasswordResp{}, nil
+	return &sysclient.ReSetPasswordResp{}, nil
 }

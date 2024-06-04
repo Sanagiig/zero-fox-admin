@@ -23,7 +23,7 @@ func NewQueryMenuListLogic(ctx context.Context, svcCtx *svc.ServiceContext) *Que
 	}
 }
 
-func (l *QueryMenuListLogic) QueryMenuList(req *types.ListMenuReq) (resp *types.ListMenuResp, err error) {
+func (l *QueryMenuListLogic) QueryMenuList(req *types.QueryMenuListReq) (resp *types.QueryMenuListResp, err error) {
 	// todo: add your logic here and delete this line
 
 	return

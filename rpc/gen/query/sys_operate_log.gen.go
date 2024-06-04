@@ -28,12 +28,18 @@ func newSysOperateLog(db *gorm.DB, opts ...gen.DOOption) sysOperateLog {
 	tableName := _sysOperateLog.sysOperateLogDo.TableName()
 	_sysOperateLog.ALL = field.NewAsterisk(tableName)
 	_sysOperateLog.ID = field.NewInt64(tableName, "id")
-	_sysOperateLog.UserName = field.NewString(tableName, "user_name")
-	_sysOperateLog.Operation = field.NewString(tableName, "operation")
+	_sysOperateLog.Title = field.NewString(tableName, "title")
+	_sysOperateLog.OperationType = field.NewString(tableName, "operation_type")
+	_sysOperateLog.OperationName = field.NewString(tableName, "operation_name")
 	_sysOperateLog.RequestMethod = field.NewString(tableName, "request_method")
-	_sysOperateLog.RequestParams = field.NewString(tableName, "request_params")
-	_sysOperateLog.ResponseParams = field.NewString(tableName, "response_params")
+	_sysOperateLog.OperationURL = field.NewString(tableName, "operation_url")
+	_sysOperateLog.OperationParams = field.NewString(tableName, "operation_params")
+	_sysOperateLog.OperationResponse = field.NewString(tableName, "operation_response")
+	_sysOperateLog.OperationStatus = field.NewInt32(tableName, "operation_status")
+	_sysOperateLog.DeptName = field.NewString(tableName, "dept_name")
 	_sysOperateLog.UseTime = field.NewInt64(tableName, "use_time")
+	_sysOperateLog.Browser = field.NewString(tableName, "browser")
+	_sysOperateLog.Os = field.NewString(tableName, "os")
 	_sysOperateLog.OperationIP = field.NewString(tableName, "operation_ip")
 	_sysOperateLog.OperationTime = field.NewTime(tableName, "operation_time")
 
@@ -42,20 +48,26 @@ func newSysOperateLog(db *gorm.DB, opts ...gen.DOOption) sysOperateLog {
 	return _sysOperateLog
 }
 
-// sysOperateLog 系统操作日志
+// sysOperateLog 系统操作日志表
 type sysOperateLog struct {
 	sysOperateLogDo sysOperateLogDo
 
-	ALL            field.Asterisk
-	ID             field.Int64  // 编号
-	UserName       field.String // 用户名
-	Operation      field.String // 用户操作
-	RequestMethod  field.String // 请求方法
-	RequestParams  field.String // 请求参数
-	ResponseParams field.String // 响应参数
-	UseTime        field.Int64  // 执行时长(毫秒)
-	OperationIP    field.String // IP地址
-	OperationTime  field.Time   // 操作时间
+	ALL               field.Asterisk
+	ID                field.Int64  // 编号
+	Title             field.String // 系统模块
+	OperationType     field.String // 操作类型
+	OperationName     field.String // 操作人员
+	RequestMethod     field.String // 请求方式
+	OperationURL      field.String // 操作方法
+	OperationParams   field.String // 请求参数
+	OperationResponse field.String // 响应参数
+	OperationStatus   field.Int32  // 操作状态
+	DeptName          field.String // 部门名称
+	UseTime           field.Int64  // 执行时长(毫秒)
+	Browser           field.String // 浏览器
+	Os                field.String // 操作信息
+	OperationIP       field.String // 操作地址
+	OperationTime     field.Time   // 操作时间
 
 	fieldMap map[string]field.Expr
 }
@@ -73,12 +85,18 @@ func (s sysOperateLog) As(alias string) *sysOperateLog {
 func (s *sysOperateLog) updateTableName(table string) *sysOperateLog {
 	s.ALL = field.NewAsterisk(table)
 	s.ID = field.NewInt64(table, "id")
-	s.UserName = field.NewString(table, "user_name")
-	s.Operation = field.NewString(table, "operation")
+	s.Title = field.NewString(table, "title")
+	s.OperationType = field.NewString(table, "operation_type")
+	s.OperationName = field.NewString(table, "operation_name")
 	s.RequestMethod = field.NewString(table, "request_method")
-	s.RequestParams = field.NewString(table, "request_params")
-	s.ResponseParams = field.NewString(table, "response_params")
+	s.OperationURL = field.NewString(table, "operation_url")
+	s.OperationParams = field.NewString(table, "operation_params")
+	s.OperationResponse = field.NewString(table, "operation_response")
+	s.OperationStatus = field.NewInt32(table, "operation_status")
+	s.DeptName = field.NewString(table, "dept_name")
 	s.UseTime = field.NewInt64(table, "use_time")
+	s.Browser = field.NewString(table, "browser")
+	s.Os = field.NewString(table, "os")
 	s.OperationIP = field.NewString(table, "operation_ip")
 	s.OperationTime = field.NewTime(table, "operation_time")
 
@@ -109,14 +127,20 @@ func (s *sysOperateLog) GetFieldByName(fieldName string) (field.OrderExpr, bool)
 }
 
 func (s *sysOperateLog) fillFieldMap() {
-	s.fieldMap = make(map[string]field.Expr, 9)
+	s.fieldMap = make(map[string]field.Expr, 15)
 	s.fieldMap["id"] = s.ID
-	s.fieldMap["user_name"] = s.UserName
-	s.fieldMap["operation"] = s.Operation
+	s.fieldMap["title"] = s.Title
+	s.fieldMap["operation_type"] = s.OperationType
+	s.fieldMap["operation_name"] = s.OperationName
 	s.fieldMap["request_method"] = s.RequestMethod
-	s.fieldMap["request_params"] = s.RequestParams
-	s.fieldMap["response_params"] = s.ResponseParams
+	s.fieldMap["operation_url"] = s.OperationURL
+	s.fieldMap["operation_params"] = s.OperationParams
+	s.fieldMap["operation_response"] = s.OperationResponse
+	s.fieldMap["operation_status"] = s.OperationStatus
+	s.fieldMap["dept_name"] = s.DeptName
 	s.fieldMap["use_time"] = s.UseTime
+	s.fieldMap["browser"] = s.Browser
+	s.fieldMap["os"] = s.Os
 	s.fieldMap["operation_ip"] = s.OperationIP
 	s.fieldMap["operation_time"] = s.OperationTime
 }

@@ -23,7 +23,7 @@ func NewQueryDictItemListLogic(ctx context.Context, svcCtx *svc.ServiceContext) 
 	}
 }
 
-func (l *QueryDictItemListLogic) QueryDictItemList(req *types.ListDictItemReq) (resp *types.ListDictItemResp, err error) {
+func (l *QueryDictItemListLogic) QueryDictItemList(req *types.QueryDictItemListReq) (resp *types.QueryDictItemListResp, err error) {
 	// todo: add your logic here and delete this line
 
 	return

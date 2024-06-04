@@ -3,12 +3,14 @@ package user
 import (
 	"context"
 
-	"github.com/zeromicro/go-zero/core/logc"
-	"github.com/zeromicro/go-zero/core/logx"
-
+	"zero-fox-admin/api/admin/internal/common/errorx"
 	"zero-fox-admin/api/admin/internal/svc"
 	"zero-fox-admin/api/admin/internal/types"
 	"zero-fox-admin/rpc/sys/sysclient"
+
+	"github.com/zeromicro/go-zero/core/logc"
+	"github.com/zeromicro/go-zero/core/logx"
+	"google.golang.org/grpc/status"
 )
 
 type AddUserLogic struct {
@@ -25,18 +27,20 @@ func NewAddUserLogic(ctx context.Context, svcCtx *svc.ServiceContext) *AddUserLo
 	}
 }
 
-func (l *AddUserLogic) AddUser(req *types.AddUserReq) (resp *types.AddUserResp, err error) {
-	userAddReq := sysclient.UserAddReq{
+func (l *AddUserLogic) AddUser(req *types.AddUserReq) (*types.AddUserResp, error) {
+	userAddReq := sysclient.AddUserReq{
+		Avatar:     req.Avatar,
+		CreateBy:   l.ctx.Value("userName").(string),
+		DeptId:     req.DeptId,
 		Email:      req.Email,
 		Mobile:     req.Mobile,
-		UserName:   req.Name,
 		NickName:   req.NickName,
-		DeptId:     req.DeptId,
-		CreateBy:   l.ctx.Value("userName").(string),
-		JobId:      req.JobId,
-		UserStatus: req.Status,
+		Remark:     req.Remark,
+		UserName:   req.UserName,
+		UserStatus: req.UserStatus,
+		PostIds:    req.PostIds,
 	}
-	_, err := l.svcCtx.UserService.UserAdd(l.ctx, &userAddReq)
+	_, err := l.svcCtx.UserService.AddUser(l.ctx, &userAddReq)
 
 	if err != nil {
 		logc.Errorf(l.ctx, "添加用户信息失败,参数:%+v,异常:%s", req, err.Error())

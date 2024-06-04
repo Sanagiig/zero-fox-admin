@@ -10,7 +10,7 @@ import (
 
 const TableNameSysUser = "sys_user"
 
-// SysUser 用户管理
+// SysUser 用户信息表
 type SysUser struct {
 	ID         int64      `gorm:"column:id;primaryKey;autoIncrement:true;comment:编号" json:"id"`                         // 编号
 	UserName   string     `gorm:"column:user_name;not null;comment:用户名" json:"userName"`                                // 用户名
@@ -20,14 +20,16 @@ type SysUser struct {
 	Salt       string     `gorm:"column:salt;not null;comment:加密盐" json:"salt"`                                         // 加密盐
 	Email      string     `gorm:"column:email;not null;comment:邮箱" json:"email"`                                        // 邮箱
 	Mobile     string     `gorm:"column:mobile;not null;comment:手机号" json:"mobile"`                                     // 手机号
-	UserStatus int32      `gorm:"column:user_status;not null;comment:状态  0：禁用   1：正常" json:"userStatus"`                // 状态  0：禁用   1：正常
+	UserStatus int32      `gorm:"column:user_status;not null;default:1;comment:帐号状态（0正常 1停用）" json:"userStatus"`        // 帐号状态（0正常 1停用）
 	DeptID     int64      `gorm:"column:dept_id;not null;comment:部门id" json:"deptId"`                                   // 部门id
-	JobID      int64      `gorm:"column:job_id;not null;comment:岗位id" json:"jobId"`                                     // 岗位id
+	Remark     string     `gorm:"column:remark;not null;comment:备注信息" json:"remark"`                                    // 备注信息
+	IsDeleted  int32      `gorm:"column:is_deleted;not null;comment:是否删除  0：否  1：是" json:"isDeleted"`                   // 是否删除  0：否  1：是
+	LoginTime  *time.Time `gorm:"column:login_time;comment:登录时间" json:"loginTime"`                                      // 登录时间
+	LoginIP    string     `gorm:"column:login_ip;not null;comment:登录ip" json:"loginIp"`                                 // 登录ip
 	CreateBy   string     `gorm:"column:create_by;not null;comment:创建者" json:"createBy"`                                // 创建者
 	CreateTime time.Time  `gorm:"column:create_time;not null;default:CURRENT_TIMESTAMP;comment:创建时间" json:"createTime"` // 创建时间
 	UpdateBy   string     `gorm:"column:update_by;not null;comment:更新者" json:"updateBy"`                                // 更新者
 	UpdateTime *time.Time `gorm:"column:update_time;comment:更新时间" json:"updateTime"`                                    // 更新时间
-	DelFlag    int32      `gorm:"column:del_flag;not null;default:1;comment:是否删除  0：已删除  1：正常" json:"delFlag"`          // 是否删除  0：已删除  1：正常
 }
 
 // TableName SysUser's table name

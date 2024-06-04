@@ -3,7 +3,6 @@ package main
 
 import (
 	"strings"
-	"zero-fox-admin/rpc/gen/apply_interface"
 
 	"gorm.io/driver/mysql"
 	"gorm.io/gen"
@@ -47,18 +46,19 @@ func main() {
 	// Use the above `*gorm.DB` instance to initialize the generator,
 	// which is required to generate structs from db when using `GenerateModel/GenerateModelAs`
 	g.UseDB(db)
-	g.ApplyInterface(func(apply_interface.Querier) {}, g.GenerateModel("sys_user"))
 	g.ApplyBasic(
 		g.GenerateModel("sys_dept"),
-		g.GenerateModel("sys_dict"),
+		g.GenerateModel("sys_dict_type"),
 		g.GenerateModel("sys_dict_item"),
-		g.GenerateModel("sys_job"),
+		g.GenerateModel("sys_post"),
+		g.GenerateModel("sys_user_post"),
 		g.GenerateModel("sys_operate_log"),
 		g.GenerateModel("sys_login_log"),
 		g.GenerateModel("sys_menu"),
 		g.GenerateModel("sys_role"),
-		g.GenerateModel("sys_role_dept"),
 		g.GenerateModel("sys_role_menu"),
+		g.GenerateModel("sys_user"),
+		g.GenerateModel("sys_post"),
 		g.GenerateModel("sys_user_role"),
 	)
 

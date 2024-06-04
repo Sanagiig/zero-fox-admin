@@ -4,7 +4,7 @@ import (
 	"context"
 
 	"zero-fox-admin/rpc/sys/internal/svc"
-	"zero-fox-admin/rpc/sys/sys_client"
+	"zero-fox-admin/rpc/sys/sysclient"
 
 	"github.com/zeromicro/go-zero/core/logx"
 )
@@ -23,9 +23,9 @@ func NewUpdateDictItemLogic(ctx context.Context, svcCtx *svc.ServiceContext) *Up
 	}
 }
 
-// 更新字典项表
-func (l *UpdateDictItemLogic) UpdateDictItem(in *sys_client.DictItemUpdateReq) (*sys_client.DictItemUpdateResp, error) {
+// 更新字典数据表
+func (l *UpdateDictItemLogic) UpdateDictItem(in *sysclient.UpdateDictItemReq) (*sysclient.UpdateDictItemResp, error) {
 	// todo: add your logic here and delete this line
 
-	return &sys_client.DictItemUpdateResp{}, nil
+	return &sysclient.UpdateDictItemResp{}, nil
 }

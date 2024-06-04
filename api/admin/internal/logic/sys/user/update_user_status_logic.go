@@ -23,7 +23,7 @@ func NewUpdateUserStatusLogic(ctx context.Context, svcCtx *svc.ServiceContext) *
 	}
 }
 
-func (l *UpdateUserStatusLogic) UpdateUserStatus(req *types.UserStatusReq) (resp *types.UserStatusResp, err error) {
+func (l *UpdateUserStatusLogic) UpdateUserStatus(req *types.UpdateUserStatusReq) (resp *types.UpdateUserStatusResp, err error) {
 	// todo: add your logic here and delete this line
 
 	return
