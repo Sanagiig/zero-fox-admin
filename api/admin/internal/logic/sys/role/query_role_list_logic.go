@@ -23,7 +23,7 @@ func NewQueryRoleListLogic(ctx context.Context, svcCtx *svc.ServiceContext) *Que
 	}
 }
 
-func (l *QueryRoleListLogic) QueryRoleList(req *types.ListRoleReq) (resp *types.ListRoleResp, err error) {
+func (l *QueryRoleListLogic) QueryRoleList(req *types.QueryRoleListReq) (resp *types.QueryRoleListResp, err error) {
 	// todo: add your logic here and delete this line
 
 	return

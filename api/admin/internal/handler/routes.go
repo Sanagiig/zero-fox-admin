@@ -5,11 +5,11 @@ import (
 	"net/http"
 
 	sysdept "zero-fox-admin/api/admin/internal/handler/sys/dept"
-	sysdict "zero-fox-admin/api/admin/internal/handler/sys/dict"
 	sysdict_item "zero-fox-admin/api/admin/internal/handler/sys/dict_item"
-	sysjob "zero-fox-admin/api/admin/internal/handler/sys/job"
+	sysdict_type "zero-fox-admin/api/admin/internal/handler/sys/dict_type"
 	syslog "zero-fox-admin/api/admin/internal/handler/sys/log"
 	sysmenu "zero-fox-admin/api/admin/internal/handler/sys/menu"
+	syspost "zero-fox-admin/api/admin/internal/handler/sys/post"
 	sysrole "zero-fox-admin/api/admin/internal/handler/sys/role"
 	sysupload "zero-fox-admin/api/admin/internal/handler/sys/upload"
 	sysuser "zero-fox-admin/api/admin/internal/handler/sys/user"
@@ -35,6 +35,11 @@ func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
 				},
 				{
 					Method:  http.MethodGet,
+					Path:    "/queryDeptDetail",
+					Handler: sysdept.QueryDeptDetailHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodGet,
 					Path:    "/queryDeptList",
 					Handler: sysdept.QueryDeptListHandler(serverCtx),
 				},
@@ -43,40 +48,15 @@ func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
 					Path:    "/updateDept",
 					Handler: sysdept.UpdateDeptHandler(serverCtx),
 				},
+				{
+					Method:  http.MethodPost,
+					Path:    "/updateDeptStatus",
+					Handler: sysdept.UpdateDeptStatusHandler(serverCtx),
+				},
 			}...,
 		),
 		rest.WithJwt(serverCtx.Config.Auth.AccessSecret),
 		rest.WithPrefix("/api/sys/dept"),
-	)
-
-	server.AddRoutes(
-		rest.WithMiddlewares(
-			[]rest.Middleware{serverCtx.CheckUrl},
-			[]rest.Route{
-				{
-					Method:  http.MethodPost,
-					Path:    "/addDict",
-					Handler: sysdict.AddDictHandler(serverCtx),
-				},
-				{
-					Method:  http.MethodGet,
-					Path:    "/deleteDict",
-					Handler: sysdict.DeleteDictHandler(serverCtx),
-				},
-				{
-					Method:  http.MethodGet,
-					Path:    "/queryDictList",
-					Handler: sysdict.QueryDictListHandler(serverCtx),
-				},
-				{
-					Method:  http.MethodPost,
-					Path:    "/updateDict",
-					Handler: sysdict.UpdateDictHandler(serverCtx),
-				},
-			}...,
-		),
-		rest.WithJwt(serverCtx.Config.Auth.AccessSecret),
-		rest.WithPrefix("/api/sys/dict"),
 	)
 
 	server.AddRoutes(
@@ -95,6 +75,11 @@ func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
 				},
 				{
 					Method:  http.MethodGet,
+					Path:    "/queryDictItemDetail",
+					Handler: sysdict_item.QueryDictItemDetailHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodGet,
 					Path:    "/queryDictItemList",
 					Handler: sysdict_item.QueryDictItemListHandler(serverCtx),
 				},
@@ -103,10 +88,15 @@ func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
 					Path:    "/updateDictItem",
 					Handler: sysdict_item.UpdateDictItemHandler(serverCtx),
 				},
+				{
+					Method:  http.MethodPost,
+					Path:    "/updateDictItemStatus",
+					Handler: sysdict_item.UpdateDictItemStatusHandler(serverCtx),
+				},
 			}...,
 		),
 		rest.WithJwt(serverCtx.Config.Auth.AccessSecret),
-		rest.WithPrefix("/api/demo/dictItem"),
+		rest.WithPrefix("/api/sys/dictItem"),
 	)
 
 	server.AddRoutes(
@@ -115,28 +105,38 @@ func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
 			[]rest.Route{
 				{
 					Method:  http.MethodPost,
-					Path:    "/addJob",
-					Handler: sysjob.AddJobHandler(serverCtx),
+					Path:    "/addDictType",
+					Handler: sysdict_type.AddDictTypeHandler(serverCtx),
 				},
 				{
 					Method:  http.MethodGet,
-					Path:    "/deleteJob",
-					Handler: sysjob.DeleteJobHandler(serverCtx),
+					Path:    "/deleteDictType",
+					Handler: sysdict_type.DeleteDictTypeHandler(serverCtx),
 				},
 				{
 					Method:  http.MethodGet,
-					Path:    "/queryJobList",
-					Handler: sysjob.QueryJobListHandler(serverCtx),
+					Path:    "/queryDictTypeDetail",
+					Handler: sysdict_type.QueryDictTypeDetailHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodGet,
+					Path:    "/queryDictTypeList",
+					Handler: sysdict_type.QueryDictTypeListHandler(serverCtx),
 				},
 				{
 					Method:  http.MethodPost,
-					Path:    "/updateJob",
-					Handler: sysjob.UpdateJobHandler(serverCtx),
+					Path:    "/updateDictType",
+					Handler: sysdict_type.UpdateDictTypeHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodPost,
+					Path:    "/updateDictTypeStatus",
+					Handler: sysdict_type.UpdateDictTypeStatusHandler(serverCtx),
 				},
 			}...,
 		),
 		rest.WithJwt(serverCtx.Config.Auth.AccessSecret),
-		rest.WithPrefix("/api/sys/job"),
+		rest.WithPrefix("/api/sys/dictType"),
 	)
 
 	server.AddRoutes(
@@ -150,8 +150,8 @@ func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
 				},
 				{
 					Method:  http.MethodGet,
-					Path:    "/deleteOperateLog",
-					Handler: syslog.DeleteOperateLogHandler(serverCtx),
+					Path:    "/queryLoginLogDetail",
+					Handler: syslog.QueryLoginLogDetailHandler(serverCtx),
 				},
 				{
 					Method:  http.MethodGet,
@@ -160,13 +160,33 @@ func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
 				},
 				{
 					Method:  http.MethodGet,
-					Path:    "/queryOperateLogList",
-					Handler: syslog.QueryOperateLogListHandler(serverCtx),
+					Path:    "/queryStatisticsLoginLog",
+					Handler: syslog.QueryStatisticsLoginLogHandler(serverCtx),
+				},
+			}...,
+		),
+		rest.WithJwt(serverCtx.Config.Auth.AccessSecret),
+		rest.WithPrefix("/api/sys/log"),
+	)
+
+	server.AddRoutes(
+		rest.WithMiddlewares(
+			[]rest.Middleware{serverCtx.CheckUrl},
+			[]rest.Route{
+				{
+					Method:  http.MethodGet,
+					Path:    "/deleteOperateLog",
+					Handler: syslog.DeleteOperateLogHandler(serverCtx),
 				},
 				{
 					Method:  http.MethodGet,
-					Path:    "/statisticsLoginLog",
-					Handler: syslog.StatisticsLoginLogHandler(serverCtx),
+					Path:    "/queryOperateLogDetail",
+					Handler: syslog.QueryOperateLogDetailHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodGet,
+					Path:    "/queryOperateLogList",
+					Handler: syslog.QueryOperateLogListHandler(serverCtx),
 				},
 			}...,
 		),
@@ -190,6 +210,11 @@ func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
 				},
 				{
 					Method:  http.MethodGet,
+					Path:    "/queryMenuDetail",
+					Handler: sysmenu.QueryMenuDetailHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodGet,
 					Path:    "/queryMenuList",
 					Handler: sysmenu.QueryMenuListHandler(serverCtx),
 				},
@@ -197,6 +222,11 @@ func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
 					Method:  http.MethodPost,
 					Path:    "/updateMenu",
 					Handler: sysmenu.UpdateMenuHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodPost,
+					Path:    "/updateMenuStatus",
+					Handler: sysmenu.UpdateMenuStatusHandler(serverCtx),
 				},
 			}...,
 		),
@@ -210,13 +240,63 @@ func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
 			[]rest.Route{
 				{
 					Method:  http.MethodPost,
+					Path:    "/addPost",
+					Handler: syspost.AddPostHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodGet,
+					Path:    "/deletePost",
+					Handler: syspost.DeletePostHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodGet,
+					Path:    "/queryPostDetail",
+					Handler: syspost.QueryPostDetailHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodGet,
+					Path:    "/queryPostList",
+					Handler: syspost.QueryPostListHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodPost,
+					Path:    "/updatePost",
+					Handler: syspost.UpdatePostHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodPost,
+					Path:    "/updatePostStatus",
+					Handler: syspost.UpdatePostStatusHandler(serverCtx),
+				},
+			}...,
+		),
+		rest.WithJwt(serverCtx.Config.Auth.AccessSecret),
+		rest.WithPrefix("/api/sys/post"),
+	)
+
+	server.AddRoutes(
+		rest.WithMiddlewares(
+			[]rest.Middleware{serverCtx.CheckUrl},
+			[]rest.Route{
+				{
+					Method:  http.MethodPost,
 					Path:    "/addRole",
 					Handler: sysrole.AddRoleHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodPost,
+					Path:    "/cancelAuthorization",
+					Handler: sysrole.CancelAuthorizationHandler(serverCtx),
 				},
 				{
 					Method:  http.MethodGet,
 					Path:    "/deleteRole",
 					Handler: sysrole.DeleteRoleHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodGet,
+					Path:    "/queryRoleDetail",
+					Handler: sysrole.QueryRoleDetailHandler(serverCtx),
 				},
 				{
 					Method:  http.MethodGet,
@@ -229,6 +309,11 @@ func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
 					Handler: sysrole.QueryRoleMenuListHandler(serverCtx),
 				},
 				{
+					Method:  http.MethodGet,
+					Path:    "/queryRoleUserList",
+					Handler: sysrole.QueryRoleUserListHandler(serverCtx),
+				},
+				{
 					Method:  http.MethodPost,
 					Path:    "/updateRole",
 					Handler: sysrole.UpdateRoleHandler(serverCtx),
@@ -237,6 +322,11 @@ func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
 					Method:  http.MethodPost,
 					Path:    "/updateRoleMenuList",
 					Handler: sysrole.UpdateRoleMenuListHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodPost,
+					Path:    "/updateRoleStatus",
+					Handler: sysrole.UpdateRoleStatusHandler(serverCtx),
 				},
 			}...,
 		),
@@ -260,58 +350,66 @@ func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
 	)
 
 	server.AddRoutes(
-		[]rest.Route{
-			{
-				Method:  http.MethodPost,
-				Path:    "/UpdateUserStatus",
-				Handler: sysuser.UpdateUserStatusHandler(serverCtx),
-			},
-			{
-				Method:  http.MethodPost,
-				Path:    "/addUser",
-				Handler: sysuser.AddUserHandler(serverCtx),
-			},
-			{
-				Method:  http.MethodGet,
-				Path:    "/deleteUser",
-				Handler: sysuser.DeleteUserHandler(serverCtx),
-			},
-			{
-				Method:  http.MethodGet,
-				Path:    "/info",
-				Handler: sysuser.UserInfoHandler(serverCtx),
-			},
-			{
-				Method:  http.MethodPost,
-				Path:    "/queryAllRelations",
-				Handler: sysuser.QueryAllRelationsHandler(serverCtx),
-			},
-			{
-				Method:  http.MethodGet,
-				Path:    "/queryUserList",
-				Handler: sysuser.QueryUserListHandler(serverCtx),
-			},
-			{
-				Method:  http.MethodGet,
-				Path:    "/queryUserRoleList",
-				Handler: sysuser.QueryUserRoleListHandler(serverCtx),
-			},
-			{
-				Method:  http.MethodPost,
-				Path:    "/reSetPassword",
-				Handler: sysuser.ReSetPasswordHandler(serverCtx),
-			},
-			{
-				Method:  http.MethodPost,
-				Path:    "/updateUser",
-				Handler: sysuser.UpdateUserHandler(serverCtx),
-			},
-			{
-				Method:  http.MethodPost,
-				Path:    "/updateUserRoleList",
-				Handler: sysuser.UpdateUserRoleListHandler(serverCtx),
-			},
-		},
+		rest.WithMiddlewares(
+			[]rest.Middleware{serverCtx.CheckUrl},
+			[]rest.Route{
+				{
+					Method:  http.MethodPost,
+					Path:    "/addUser",
+					Handler: sysuser.AddUserHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodGet,
+					Path:    "/deleteUser",
+					Handler: sysuser.DeleteUserHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodGet,
+					Path:    "/info",
+					Handler: sysuser.UserInfoHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodGet,
+					Path:    "/queryDeptAndPostList",
+					Handler: sysuser.QueryDeptAndPostListHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodGet,
+					Path:    "/queryUserDetail",
+					Handler: sysuser.QueryUserDetailHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodGet,
+					Path:    "/queryUserList",
+					Handler: sysuser.QueryUserListHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodGet,
+					Path:    "/queryUserRoleList",
+					Handler: sysuser.QueryUserRoleListHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodPost,
+					Path:    "/reSetPassword",
+					Handler: sysuser.ReSetPasswordHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodPost,
+					Path:    "/updateUser",
+					Handler: sysuser.UpdateUserHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodPost,
+					Path:    "/updateUserRoleList",
+					Handler: sysuser.UpdateUserRoleListHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodPost,
+					Path:    "/updateUserStatus",
+					Handler: sysuser.UpdateUserStatusHandler(serverCtx),
+				},
+			}...,
+		),
 		rest.WithJwt(serverCtx.Config.Auth.AccessSecret),
 		rest.WithPrefix("/api/sys/user"),
 	)

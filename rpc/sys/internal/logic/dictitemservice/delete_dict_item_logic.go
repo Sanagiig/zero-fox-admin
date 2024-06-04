@@ -4,7 +4,7 @@ import (
 	"context"
 
 	"zero-fox-admin/rpc/sys/internal/svc"
-	"zero-fox-admin/rpc/sys/sys_client"
+	"zero-fox-admin/rpc/sys/sysclient"
 
 	"github.com/zeromicro/go-zero/core/logx"
 )
@@ -23,9 +23,9 @@ func NewDeleteDictItemLogic(ctx context.Context, svcCtx *svc.ServiceContext) *De
 	}
 }
 
-// 删除字典项表
-func (l *DeleteDictItemLogic) DeleteDictItem(in *sys_client.DictItemDeleteReq) (*sys_client.DictItemDeleteResp, error) {
+// 删除字典数据表
+func (l *DeleteDictItemLogic) DeleteDictItem(in *sysclient.DeleteDictItemReq) (*sysclient.DeleteDictItemResp, error) {
 	// todo: add your logic here and delete this line
 
-	return &sys_client.DictItemDeleteResp{}, nil
+	return &sysclient.DeleteDictItemResp{}, nil
 }

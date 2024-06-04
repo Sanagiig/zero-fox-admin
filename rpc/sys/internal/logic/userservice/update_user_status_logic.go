@@ -4,7 +4,7 @@ import (
 	"context"
 
 	"zero-fox-admin/rpc/sys/internal/svc"
-	"zero-fox-admin/rpc/sys/sys_client"
+	"zero-fox-admin/rpc/sys/sysclient"
 
 	"github.com/zeromicro/go-zero/core/logx"
 )
@@ -23,8 +23,9 @@ func NewUpdateUserStatusLogic(ctx context.Context, svcCtx *svc.ServiceContext) *
 	}
 }
 
-func (l *UpdateUserStatusLogic) UpdateUserStatus(in *sys_client.UserStatusReq) (*sys_client.UserStatusResp, error) {
+// 更新用户信息表状态
+func (l *UpdateUserStatusLogic) UpdateUserStatus(in *sysclient.UpdateUserStatusReq) (*sysclient.UpdateUserStatusResp, error) {
 	// todo: add your logic here and delete this line
 
-	return &sys_client.UserStatusResp{}, nil
+	return &sysclient.UpdateUserStatusResp{}, nil
 }

@@ -23,7 +23,7 @@ func NewDeleteOperateLogLogic(ctx context.Context, svcCtx *svc.ServiceContext) *
 	}
 }
 
-func (l *DeleteOperateLogLogic) DeleteOperateLog(req *types.DeleteSysLogReq) (resp *types.DeleteSysLogResp, err error) {
+func (l *DeleteOperateLogLogic) DeleteOperateLog(req *types.DeleteOperateLogReq) (resp *types.DeleteOperateLogResp, err error) {
 	// todo: add your logic here and delete this line
 
 	return

@@ -4,7 +4,7 @@ import (
 	"context"
 
 	"zero-fox-admin/rpc/sys/internal/svc"
-	"zero-fox-admin/rpc/sys/sys_client"
+	"zero-fox-admin/rpc/sys/sysclient"
 
 	"github.com/zeromicro/go-zero/core/logx"
 )
@@ -23,9 +23,9 @@ func NewAddDictItemLogic(ctx context.Context, svcCtx *svc.ServiceContext) *AddDi
 	}
 }
 
-// 添加字典项表
-func (l *AddDictItemLogic) AddDictItem(in *sys_client.DictItemAddReq) (*sys_client.DictItemAddResp, error) {
+// 添加字典数据表
+func (l *AddDictItemLogic) AddDictItem(in *sysclient.AddDictItemReq) (*sysclient.AddDictItemResp, error) {
 	// todo: add your logic here and delete this line
 
-	return &sys_client.DictItemAddResp{}, nil
+	return &sysclient.AddDictItemResp{}, nil
 }

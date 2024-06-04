@@ -23,7 +23,7 @@ func NewQueryUserListLogic(ctx context.Context, svcCtx *svc.ServiceContext) *Que
 	}
 }
 
-func (l *QueryUserListLogic) QueryUserList(req *types.ListUserReq) (resp *types.ListUserResp, err error) {
+func (l *QueryUserListLogic) QueryUserList(req *types.QueryUserListReq) (resp *types.QueryUserListResp, err error) {
 	// todo: add your logic here and delete this line
 
 	return
