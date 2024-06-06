@@ -3,6 +3,7 @@ module zero-fox-admin
 go 1.22.0
 
 require (
+	github.com/ua-parser/uap-go v0.0.0-20240113215029-33f8e6d47f38
 	github.com/zeromicro/go-zero v1.6.5
 	google.golang.org/grpc v1.63.2
 	google.golang.org/protobuf v1.34.1
@@ -38,6 +39,7 @@ require (
 	github.com/google/gofuzz v1.2.0 // indirect
 	github.com/google/uuid v1.6.0 // indirect
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.18.1 // indirect
+	github.com/hashicorp/golang-lru v0.5.4 // indirect
 	github.com/jinzhu/inflection v1.0.0 // indirect
 	github.com/jinzhu/now v1.1.5 // indirect
 	github.com/josharian/intern v1.0.0 // indirect

@@ -6,6 +6,7 @@ package query
 
 import (
 	"context"
+	"fmt"
 
 	"gorm.io/gorm"
 	"gorm.io/gorm/clause"
@@ -114,7 +115,10 @@ func (s *sysUser) updateTableName(table string) *sysUser {
 	return s
 }
 
-func (s *sysUser) WithContext(ctx context.Context) ISysUserDo { return s.sysUserDo.WithContext(ctx) }
+func (s *sysUser) WithContext(ctx context.Context) ISysUserDo {
+	fmt.Println(s.sysUserDo)
+	return s.sysUserDo.WithContext(ctx)
+}
 
 func (s sysUser) TableName() string { return s.sysUserDo.TableName() }
 
