@@ -29,8 +29,9 @@ func NewAddUserLogic(ctx context.Context, svcCtx *svc.ServiceContext) *AddUserLo
 
 func (l *AddUserLogic) AddUser(req *types.AddUserReq) (*types.AddUserResp, error) {
 	userAddReq := sysclient.AddUserReq{
-		Avatar:     req.Avatar,
-		CreateBy:   l.ctx.Value("userName").(string),
+		Avatar: req.Avatar,
+		//CreateBy:   l.ctx.Value("userName").(string),
+		CreateBy:   "admin",
 		DeptId:     req.DeptId,
 		Email:      req.Email,
 		Mobile:     req.Mobile,

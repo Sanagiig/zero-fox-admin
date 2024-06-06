@@ -234,7 +234,7 @@ type (
 )
 
 @server (
-	jwt:        Auth
+//	jwt:        Auth
 	middleware: CheckUrl
 	group:      sys/user
 	prefix:     /api/sys/user
