@@ -1,31 +1,35 @@
 syntax = "v1"
 
-info (
-	desc:   "用户相关"
-	author: "koobe"
-	email:  "1002219331@qq.com"
+info(
+	desc: "用户相关"
+	author: "Sanagiig"
 )
 
 type (
-	LoginReq {
-		Account  string `json:"account"` //手机号或者用户名
+	loginReq {
+		UserName string `json:"userName"`
 		Password string `json:"password"`
 	}
-	LoginData {
-		AccessToken string `json:"token"`
+	loginResp {
+		Code             string `json:"code"`
+		Message          string `json:"message"`
+		Status           string `json:"status"`
+		CurrentAuthority string `json:"currentAuthority"`
+		Id               int64  `json:"id"`
+		UserName         string `json:"userName"`
+		AccessToken      string `json:"token"`
+		AccessExpire     int64  `json:"accessExpire"`
+		RefreshAfter     int64  `json:"refreshAfter"`
 	}
-	LoginResp {
-		Code    string    `json:"code"`
-		Message string    `json:"message"`
-		Data    LoginData `json:"data"`
-	}
+
 	ListMenuTree {
-		Id       int64  `json:"id"` // 编号
-		Path     string `json:"path"` // 菜单路径
-		Name     string `json:"name"` // 菜单名称
+		Id       int64  `json:"id"`       // 编号
+		Path     string `json:"path"`     // 菜单路径
+		Name     string `json:"name"`     // 菜单名称
 		ParentId int64  `json:"parentId"` // 父菜单ID，一级菜单为0
-		Icon     string `json:"icon"` // 菜单图标
+		Icon     string `json:"icon"`     // 菜单图标
 	}
+
 	ListMenuTreeVue {
 		Id           int64        `json:"id"`
 		ParentId     int64        `json:"parentId"`
@@ -37,60 +41,66 @@ type (
 		VueComponent string       `json:"component"`
 		Meta         MenuTreeMeta `json:"meta"`
 	}
+
 	MenuTreeMeta {
 		Title string `json:"title"`
 		Icon  string `json:"icon"`
 	}
-	UserInfoData {
+
+	userInfoResp {
+		Code        string             `json:"code"`
+		Message     string             `json:"message"`
 		Avatar      string             `json:"avatar"`
 		Name        string             `json:"name"`
 		MenuTree    []*ListMenuTree    `json:"menuTree"`
 		MenuTreeVue []*ListMenuTreeVue `json:"menuTreeVue"`
 	}
-	userInfoResp {
-		Code    string       `json:"code"`
-		Message string       `json:"message"`
-		Data    UserInfoData `json:"data"`
-	}
-	AddUserReq {
+	addUserReq {
 		Email    string `json:"email"`
 		Mobile   string `json:"mobile"`
 		Name     string `json:"name"`
 		NickName string `json:"nickName"`
 		DeptId   int64  `json:"deptId"`
+		RoleId   int64  `json:"roleId"`
 		JobId    int64  `json:"jobId"`
 		Status   int32  `json:"status"` // 状态  0：禁用   1：正常
 	}
-	AddUserResp {
+	addUserResp {
 		Code    string `json:"code"`
 		Message string `json:"message"`
 	}
+
 	ListUserReq {
-		Current  int64  `form:"current,default=1"`
-		PageSize int64  `form:"pageSize,default=20"`
-		Name     string `form:"name,optional"`
-		NickName string `form:"nickName,optional"`
-		Mobile   string `form:"mobile,optional"`
-		Email    string `form:"email,optional"`
-		Status   int32  `form:"status,default=2"`
-		DeptId   int64  `form:"deptId,optional"`
-		JobId    int64  `form:"deptId,optional"`
+		Current  int64  `json:"current,default=1"`
+		PageSize int64  `json:"pageSize,default=20"`
+		Name     string `json:"name,optional"`
+		NickName string `json:"nickName,optional"`
+		Mobile   string `json:"mobile,optional"`
+		Email    string `json:"email,optional"`
+		Status   int32  `json:"status,optional,default=2"`
+		DeptId   int64  `json:"deptId,optional"`
+		JobId    int64  `json:"deptId,optional"`
 	}
+
 	ListUserData {
-		Id         int64  `json:"id"` // 编号
-		UserName   string `json:"name"` // 用户名
-		NickName   string `json:"nickName"` // 昵称
-		Avatar     string `json:"avatar"` // 头像
-		Email      string `json:"email"` // 邮箱
-		Mobile     string `json:"mobile"` // 手机号
-		UserStatus int32  `json:"status"` // 状态  0：禁用   1：正常
-		DeptId     int64  `json:"deptId"` // 机构ID
-		CreateBy   string `json:"createBy"` // 创建人
+		Id         int64  `json:"id"`         // 编号
+		Name       string `json:"name"`       // 用户名
+		NickName   string `json:"nickName"`   // 昵称
+		Avatar     string `json:"avatar"`     // 头像
+		Email      string `json:"email"`      // 邮箱
+		Mobile     string `json:"mobile"`     // 手机号
+		Status     int32  `json:"status"`     // 状态  0：禁用   1：正常
+		DeptId     int64  `json:"deptId"`     // 机构ID
+		CreateBy   string `json:"createBy"`   // 创建人
 		CreateTime string `json:"createTime"` // 创建时间
-		UpdateBy   string `json:"updateBy"` // 更新人
+		UpdateBy   string `json:"updateBy"`   // 更新人
 		UpdateTime string `json:"updateTime"` // 更新时间
-		DelFlag    int32  `json:"delFlag"` // 是否删除  0：已删除  1：正常
+		DelFlag    int32  `json:"delFlag"`    // 是否删除  0：已删除  1：正常
 		JobId      int64  `json:"jobId"`
+		RoleId     int64  `json:"roleId"`
+		RoleName   string `json:"roleName"`
+		JobName    string `json:"jobName"`
+		DeptName   string `json:"deptName"`
 	}
 	ListUserResp {
 		Code     string          `json:"code"`
@@ -108,6 +118,7 @@ type (
 		Name     string `json:"name"`
 		NickName string `json:"nickName"`
 		DeptId   int64  `json:"deptId"`
+		RoleId   int64  `json:"roleId"`
 		Status   int32  `json:"status"`
 		JobId    int64  `json:"jobId"`
 		DelFlag  int64  `json:"delFlag,default=2"` // 是否删除  0：已删除  1：正常
@@ -117,7 +128,7 @@ type (
 		Message string `json:"message"`
 	}
 	DeleteUserReq {
-		Ids []int64 `form:"ids"`
+		Ids []int64 `json:"ids"`
 	}
 	DeleteUserResp {
 		Code    string `json:"code"`
@@ -138,25 +149,30 @@ type (
 		Code    string `json:"code"`
 		Message string `json:"message"`
 	}
+
 	RoleRelations {
 		Id     int64  `json:"id"`
 		Name   string `json:"name"`
 		Remark string `json:"remark"`
 	}
+
 	DeptRelations {
 		Id       int64  `json:"id"`
 		Value    string `json:"value"`
 		Title    string `json:"title"`
 		ParentId int64  `json:"parentId"`
 	}
+
 	JobRelations {
 		Id      int64  `json:"id"`
 		JobName string `json:"jobName"`
 	}
+
 	QueryAllRelationsReq {
-		Current  int64 `form:"current,default=1"`
-		PageSize int64 `form:"pageSize,default=20"`
+		Current  int64 `json:"current,default=1"`
+		PageSize int64 `json:"pageSize,default=20"`
 	}
+
 	QueryAllRelationsData {
 		RoleRelations []*RoleRelations `json:"roleRelations"`
 		DeptRelations []*DeptRelations `json:"deptRelations"`
@@ -167,68 +183,35 @@ type (
 		Message string                `json:"message"`
 		Data    QueryAllRelationsData `json:"data"`
 	}
-	QueryUserRoleListReq {
-		UserId   int64  `form:"userId"`
-		Current  int64  `form:"current,default=1"`
-		PageSize int64  `form:"pageSize,default=20"`
-		RoleName string `json:"roleName,optional"` // 角色名称
-	}
-	RoleListData {
-		Id         int64  `json:"id"` // 编号
-		Name       string `json:"name"` // 角色名称
-		Remark     string `json:"remark"` // 备注
-		CreateBy   string `json:"createBy"` // 创建人
-		CreateTime string `json:"createTime"` // 创建时间
-		UpdateBy   string `json:"updateBy"` // 更新人
-		UpdateTime string `json:"updateTime"` // 更新时间
-		DelFlag    int32  `json:"delFlag"` // 是否删除  0：已删除  1：正常
-		Status     int32  `json:"status"` // 状态
-	}
-	UserRoleListData {
-		RoleList []RoleListData `json:"roleList"`
-		RoleIds  []int64        `json:"roleIds"`
-	}
-	QueryUserRoleListResp {
-		Code    string           `json:"code"`
-		Message string           `json:"message"`
-		Data    UserRoleListData `json:"data"`
-	}
-	UpdateUserRoleReq {
-		UserId  int64   `json:"userId"`
-		RoleIds []int64 `json:"roleIds"`
-	}
-	UpdateUserRoleResp {
-		Code    string `json:"code"`
-		Message string `json:"message"`
-	}
 )
 
-@server (
-	jwt:        Auth
-	// middleware: CheckUrl
-	group:      sys/user
-	prefix:     /api/sys/user
+@server(
+	jwt: Auth
+	middleware: CheckUrl
+	group: sys/user
+	prefix: /api/sys/user
 )
 service admin-api {
+
 	//获取用户信息
 	@handler UserInfo
 	get /info returns (userInfoResp)
 
 	//添加用户
-	@handler AddUser
-	post /addUser (AddUserReq) returns (AddUserResp)
+	@handler UserAdd
+	post /add (addUserReq) returns (addUserResp)
 
 	//查询用户列表
-	@handler QueryUserList
-	get /queryUserList (ListUserReq) returns (ListUserResp)
+	@handler UserList
+	post /list (ListUserReq) returns (ListUserResp)
 
 	//更新用户信息
-	@handler UpdateUser
-	post /updateUser (UpdateUserReq) returns (UpdateUserResp)
+	@handler UserUpdate
+	post /update (UpdateUserReq) returns (UpdateUserResp)
 
 	//删除用户
-	@handler DeleteUser
-	get /deleteUser (DeleteUserReq) returns (DeleteUserResp)
+	@handler UserDelete
+	post /delete (DeleteUserReq) returns (DeleteUserResp)
 
 	//重置用户密码
 	@handler ReSetPassword
@@ -241,21 +224,12 @@ service admin-api {
 	//查询用户角色,单位,岗位的关系
 	@handler QueryAllRelations
 	post /queryAllRelations (QueryAllRelationsReq) returns (QueryAllRelationsResp)
-
-	//查询用户与角色的关联
-	@handler QueryUserRoleList
-	get /queryUserRoleList (QueryUserRoleListReq) returns (QueryUserRoleListResp)
-
-	//更新用户与角色的关联
-	@handler UpdateUserRoleList
-	post /updateUserRoleList (UpdateUserRoleReq) returns (UpdateUserRoleResp)
 }
 
-@server (
+@server(
 	group: sys/user
 )
 service admin-api {
 	@handler UserLogin
-	post /api/sys/user/login (LoginReq) returns (LoginResp)
+	post /api/sys/user/login (loginReq) returns (loginResp)
 }
-

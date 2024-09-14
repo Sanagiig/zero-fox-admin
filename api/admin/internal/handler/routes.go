@@ -12,58 +12,51 @@ import (
 
 func RegisterHandlers(server *rest.Server, serverCtx *svc.ServiceContext) {
 	server.AddRoutes(
-		[]rest.Route{
-			{
-				Method:  http.MethodPost,
-				Path:    "/UpdateUserStatus",
-				Handler: sysuser.UpdateUserStatusHandler(serverCtx),
-			},
-			{
-				Method:  http.MethodPost,
-				Path:    "/addUser",
-				Handler: sysuser.AddUserHandler(serverCtx),
-			},
-			{
-				Method:  http.MethodGet,
-				Path:    "/deleteUser",
-				Handler: sysuser.DeleteUserHandler(serverCtx),
-			},
-			{
-				Method:  http.MethodGet,
-				Path:    "/info",
-				Handler: sysuser.UserInfoHandler(serverCtx),
-			},
-			{
-				Method:  http.MethodPost,
-				Path:    "/queryAllRelations",
-				Handler: sysuser.QueryAllRelationsHandler(serverCtx),
-			},
-			{
-				Method:  http.MethodGet,
-				Path:    "/queryUserList",
-				Handler: sysuser.QueryUserListHandler(serverCtx),
-			},
-			{
-				Method:  http.MethodGet,
-				Path:    "/queryUserRoleList",
-				Handler: sysuser.QueryUserRoleListHandler(serverCtx),
-			},
-			{
-				Method:  http.MethodPost,
-				Path:    "/reSetPassword",
-				Handler: sysuser.ReSetPasswordHandler(serverCtx),
-			},
-			{
-				Method:  http.MethodPost,
-				Path:    "/updateUser",
-				Handler: sysuser.UpdateUserHandler(serverCtx),
-			},
-			{
-				Method:  http.MethodPost,
-				Path:    "/updateUserRoleList",
-				Handler: sysuser.UpdateUserRoleListHandler(serverCtx),
-			},
-		},
+		rest.WithMiddlewares(
+			[]rest.Middleware{serverCtx.CheckUrl},
+			[]rest.Route{
+				{
+					Method:  http.MethodPost,
+					Path:    "/UpdateUserStatus",
+					Handler: sysuser.UpdateUserStatusHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodPost,
+					Path:    "/add",
+					Handler: sysuser.UserAddHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodPost,
+					Path:    "/delete",
+					Handler: sysuser.UserDeleteHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodGet,
+					Path:    "/info",
+					Handler: sysuser.UserInfoHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodPost,
+					Path:    "/list",
+					Handler: sysuser.UserListHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodPost,
+					Path:    "/queryAllRelations",
+					Handler: sysuser.QueryAllRelationsHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodPost,
+					Path:    "/reSetPassword",
+					Handler: sysuser.ReSetPasswordHandler(serverCtx),
+				},
+				{
+					Method:  http.MethodPost,
+					Path:    "/update",
+					Handler: sysuser.UserUpdateHandler(serverCtx),
+				},
+			}...,
+		),
 		rest.WithJwt(serverCtx.Config.Auth.AccessSecret),
 		rest.WithPrefix("/api/sys/user"),
 	)

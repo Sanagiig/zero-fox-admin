@@ -1,23 +1,23 @@
 package errorx
 
-const DefaultCode = "111111"
+const defaultCode = 1001
 
 type CodeError struct {
-	Code    string `json:"code"`
+	Code    int    `json:"code"`
 	Message string `json:"message"`
 }
 
 type CodeErrorResponse struct {
-	Code    string `json:"code"`
+	Code    int    `json:"code"`
 	Message string `json:"message"`
 }
 
-func NewCodeError(code, msg string) error {
+func NewCodeError(code int, msg string) error {
 	return &CodeError{Code: code, Message: msg}
 }
 
 func NewDefaultError(msg string) error {
-	return NewCodeError(DefaultCode, msg)
+	return NewCodeError(defaultCode, msg)
 }
 
 func (e *CodeError) Error() string {
