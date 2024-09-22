@@ -2,29 +2,26 @@ package middleware
 
 import (
 	"bytes"
-	"zero-fox-admin/rpc/sys/client/operatelogservice"
-	"zero-fox-admin/rpc/sys/sysclient"
-
 	"github.com/ua-parser/uap-go/uaparser"
 	"github.com/zeromicro/go-zero/core/logx"
 	"github.com/zeromicro/go-zero/rest/httpx"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"time"
+	"zero-fox-admin/rpc/sys/client/operatelogservice"
+	"zero-fox-admin/rpc/sys/sysclient"
 )
 
-type AddLogMiddleware struct {
+type AddLoginMiddleware struct {
 	Sys operatelogservice.OperateLogService
 }
 
-func NewAddLogMiddleware(Sys operatelogservice.OperateLogService) *AddLogMiddleware {
-	return &AddLogMiddleware{Sys: Sys}
+func NewAddLogMiddleware(Sys operatelogservice.OperateLogService) *AddLoginMiddleware {
+	return &AddLoginMiddleware{Sys: Sys}
 }
 
-// Handle 参考chatgpt实现
-func (m *AddLogMiddleware) Handle(next http.HandlerFunc) http.HandlerFunc {
+func (m *AddLoginMiddleware) Handle(next http.HandlerFunc) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
-
 		uri := r.RequestURI
 		if uri == "/api/sys/user/login" || uri == "/api/sys/upload" {
 			logx.WithContext(r.Context()).Infof("Request: %s %s", r.Method, uri)
@@ -32,19 +29,17 @@ func (m *AddLogMiddleware) Handle(next http.HandlerFunc) http.HandlerFunc {
 			return
 		}
 
-		userName := r.Context().Value("userName").(string)
+		userName := r.Context().Value("UserName").(string)
 		deptName := r.Context().Value("deptName").(string)
 
 		startTime := time.Now()
-
-		// 读取请求主体
-		body, err := ioutil.ReadAll(r.Body)
+		//	请求主题
+		body, err := io.ReadAll(r.Body)
 		if err != nil {
 			logx.WithContext(r.Context()).Errorf("Failed to read request body: %v", err)
 		}
 
-		// 创建一个新的请求主体用于后续读取
-		r.Body = ioutil.NopCloser(bytes.NewBuffer(body))
+		r.Body = io.NopCloser(bytes.NewBuffer(body))
 
 		// 打印请求参数日志
 		logx.WithContext(r.Context()).Infof("Request: %s %s %s", r.Method, uri, body)
