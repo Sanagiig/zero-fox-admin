@@ -1,0 +1,30 @@
+Name: admin-api
+Host: 0.0.0.0
+Port: 8888
+Mode: dev
+
+Log:
+  ServiceName: admin-api
+  Stat: false
+
+#系统
+SysRpc:
+  Etcd:
+    Hosts:
+      - 127.0.0.1:2379
+    Key: sys.rpc
+  NonBlock: true
+
+Prometheus:
+  Host: 127.0.0.1
+  Port: 8188
+  Path: /metrics
+
+Redis:
+  Address: 101.43.41.211:6379
+  Pass: lwj@1993
+
+Auth:
+  AccessSecret: ad879037-c7a4-4063-9236-6bfc35d54b7d
+  AccessExpire: 86400
+
