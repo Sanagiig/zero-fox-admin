@@ -1,8 +1,10 @@
 
 GOCMD=go
+GO_HOT_CMD=fresh
 GOBUILD=$(GOCMD) build
 GOCLEAN=$(GOCMD) clean
 GOGET=$(GOCMD) mod tidy
+KILL_CMD=tskill
 
 GOCTL=goctl ## goctl
 
@@ -36,13 +38,9 @@ start: ## 运行目标
 	nohup ./target/admin-api/admin-api -f ./target/admin-api/admin-api.yaml  > /dev/null 2>&1 &
 
 stop: ## 停止目标
-	-pkill -f admin-api
-	-pkill -f sys-rpc
-	@for i in 5 4 3 2 1; do\
-	  echo -n "stop $$i";\
-	  sleep 1; \
-	  echo " "; \
-	done
+	$(KILL_CMD)  admin-api
+	$(KILL_CMD)  sys-rpc
+	echo "server is stopped."
 
 restart: stop start ## 重启项目
 
