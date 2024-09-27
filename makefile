@@ -29,13 +29,13 @@ copy_config:
 gen_proto:
 	${GOCMD} run ./script/proto/main.go sys
 
-build: copy_config
+build: gen_proto copy_config
 	$(GOBUILD) -o target/sys-rpc/sys-rpc -v ./rpc/sys/sys.go
 	$(GOBUILD) -o target/admin-api/admin-api -v ./api/admin/admin.go
 
 start: ## 运行目标
-	nohup ./target/sys-rpc/sys-rpc -f ./target/sys-rpc/sys-rpc.yaml  > /dev/null 2>&1  &
-	nohup ./target/admin-api/admin-api -f ./target/admin-api/admin-api.yaml  > /dev/null 2>&1 &
+	nohup ./target/sys-rpc/sys-rpc -f ./target/sys-rpc/sys-rpc.yaml  > ./target/sys-rpc/log.txt  &
+	nohup ./target/admin-api/admin-api -f ./target/admin-api/admin-api.yaml  > ./target/admin-api/log.txt &
 
 stop: ## 停止目标
 	$(KILL_CMD)  admin-api
@@ -43,6 +43,11 @@ stop: ## 停止目标
 	echo "server is stopped."
 
 restart: stop start ## 重启项目
+
+gen_swagger:  ## 生成swagger文档
+	# api-admin-sys
+	$(GOCTL) api plugin -plugin goctl-swagger="swagger -filename sys.json" -api ./api/admin/doc/api/sys/entry.api  -dir ./api/admin/doc/swagger/sys/ 
+
 
 gen: gen_proto	## 生成所有模块代码
 	# api-admin

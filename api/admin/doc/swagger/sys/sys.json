@@ -1,0 +1,7114 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "",
+    "version": ""
+  },
+  "schemes": [
+    "http",
+    "https"
+  ],
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/api/sys/dept/addDept": {
+      "post": {
+        "operationId": "AddDept",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/AddDeptResp"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "description": " 添加部门信息",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/AddDeptReq"
+            }
+          }
+        ],
+        "tags": [
+          "sys/dept"
+        ],
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
+      }
+    },
+    "/api/sys/dept/deleteDept": {
+      "get": {
+        "operationId": "DeleteDept",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/DeleteDeptResp"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "ids",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "tags": [
+          "sys/dept"
+        ],
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
+      }
+    },
+    "/api/sys/dept/queryDeptDetail": {
+      "get": {
+        "operationId": "QueryDeptDetail",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/QueryDeptDetailResp"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "tags": [
+          "sys/dept"
+        ],
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
+      }
+    },
+    "/api/sys/dept/queryDeptList": {
+      "get": {
+        "operationId": "QueryDeptList",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/QueryDeptListResp"
+            }
+          }
+        },
+        "tags": [
+          "sys/dept"
+        ],
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
+      }
+    },
+    "/api/sys/dept/updateDept": {
+      "post": {
+        "operationId": "UpdateDept",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/UpdateDeptResp"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "description": " 更新部门信息",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/UpdateDeptReq"
+            }
+          }
+        ],
+        "tags": [
+          "sys/dept"
+        ],
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
+      }
+    },
+    "/api/sys/dept/updateDeptStatus": {
+      "post": {
+        "operationId": "UpdateDeptStatus",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/UpdateDeptStatusResp"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "description": " 批量更新部门信息状态",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/UpdateDeptStatusReq"
+            }
+          }
+        ],
+        "tags": [
+          "sys/dept"
+        ],
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
+      }
+    },
+    "/api/sys/dictItem/addDictItem": {
+      "post": {
+        "operationId": "AddDictItem",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/AddDictItemResp"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "description": " 添加字典数据",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/AddDictItemReq"
+            }
+          }
+        ],
+        "tags": [
+          "sys/dict_item"
+        ],
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
+      }
+    },
+    "/api/sys/dictItem/deleteDictItem": {
+      "get": {
+        "operationId": "DeleteDictItem",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/DeleteDictItemResp"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "ids",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "tags": [
+          "sys/dict_item"
+        ],
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
+      }
+    },
+    "/api/sys/dictItem/queryDictItemDetail": {
+      "get": {
+        "operationId": "QueryDictItemDetail",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/QueryDictItemDetailResp"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "tags": [
+          "sys/dict_item"
+        ],
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
+      }
+    },
+    "/api/sys/dictItem/queryDictItemList": {
+      "get": {
+        "operationId": "QueryDictItemList",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/QueryDictItemListResp"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "current",
+            "description": "第几页",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int64",
+            "default": "1"
+          },
+          {
+            "name": "pageSize",
+            "description": "每页的数量",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int64",
+            "default": "20"
+          },
+          {
+            "name": "dictLabel",
+            "description": "字典标签",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "dictStatus",
+            "description": "字典状态",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "default": "2"
+          },
+          {
+            "name": "dictType",
+            "description": "字典类型",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "sys/dict_item"
+        ],
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
+      }
+    },
+    "/api/sys/dictItem/updateDictItem": {
+      "post": {
+        "operationId": "UpdateDictItem",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/UpdateDictItemResp"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "description": " 更新字典数据",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/UpdateDictItemReq"
+            }
+          }
+        ],
+        "tags": [
+          "sys/dict_item"
+        ],
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
+      }
+    },
+    "/api/sys/dictItem/updateDictItemStatus": {
+      "post": {
+        "operationId": "UpdateDictItemStatus",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/UpdateDictItemStatusResp"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "description": " 批量更新字典数据状态",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/UpdateDictItemStatusReq"
+            }
+          }
+        ],
+        "tags": [
+          "sys/dict_item"
+        ],
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
+      }
+    },
+    "/api/sys/dictType/addDictType": {
+      "post": {
+        "operationId": "AddDictType",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/AddDictTypeResp"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "description": " 添加字典类型",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/AddDictTypeReq"
+            }
+          }
+        ],
+        "tags": [
+          "sys/dict_type"
+        ],
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
+      }
+    },
+    "/api/sys/dictType/deleteDictType": {
+      "get": {
+        "operationId": "DeleteDictType",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/DeleteDictTypeResp"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "ids",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "tags": [
+          "sys/dict_type"
+        ],
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
+      }
+    },
+    "/api/sys/dictType/queryDictTypeDetail": {
+      "get": {
+        "operationId": "QueryDictTypeDetail",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/QueryDictTypeDetailResp"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "tags": [
+          "sys/dict_type"
+        ],
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
+      }
+    },
+    "/api/sys/dictType/queryDictTypeList": {
+      "get": {
+        "operationId": "QueryDictTypeList",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/QueryDictTypeListResp"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "current",
+            "description": "第几页",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int64",
+            "default": "1"
+          },
+          {
+            "name": "pageSize",
+            "description": "每页的数量",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int64",
+            "default": "20"
+          },
+          {
+            "name": "dictName",
+            "description": "字典名称",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "dictStatus",
+            "description": "字典状态",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "default": "2"
+          },
+          {
+            "name": "dictType",
+            "description": "字典类型",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "isSystem",
+            "description": "是否系统预留  0：否  1：是",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "default": "2"
+          }
+        ],
+        "tags": [
+          "sys/dict_type"
+        ],
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
+      }
+    },
+    "/api/sys/dictType/updateDictType": {
+      "post": {
+        "operationId": "UpdateDictType",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/UpdateDictTypeResp"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "description": " 更新字典类型",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/UpdateDictTypeReq"
+            }
+          }
+        ],
+        "tags": [
+          "sys/dict_type"
+        ],
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
+      }
+    },
+    "/api/sys/dictType/updateDictTypeStatus": {
+      "post": {
+        "operationId": "UpdateDictTypeStatus",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/UpdateDictTypeStatusResp"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "description": " 批量更新字典类型状态",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/UpdateDictTypeStatusReq"
+            }
+          }
+        ],
+        "tags": [
+          "sys/dict_type"
+        ],
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
+      }
+    },
+    "/api/sys/log/deleteLoginLog": {
+      "get": {
+        "operationId": "DeleteLoginLog",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/DeleteLoginLogResp"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "ids",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "tags": [
+          "sys/log"
+        ],
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
+      }
+    },
+    "/api/sys/log/deleteOperateLog": {
+      "get": {
+        "operationId": "DeleteOperateLog",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/DeleteOperateLogResp"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "ids",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "tags": [
+          "sys/log"
+        ],
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
+      }
+    },
+    "/api/sys/log/queryLoginLogDetail": {
+      "get": {
+        "operationId": "QueryLoginLogDetail",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/QueryLoginLogDetailResp"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "tags": [
+          "sys/log"
+        ],
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
+      }
+    },
+    "/api/sys/log/queryLoginLogList": {
+      "get": {
+        "operationId": "QueryLoginLogList",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/QueryLoginLogListResp"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "current",
+            "description": "第几页",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int64",
+            "default": "1"
+          },
+          {
+            "name": "pageSize",
+            "description": "每页的数量",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int64",
+            "default": "20"
+          },
+          {
+            "name": "browser",
+            "description": "浏览器",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "ipAddress",
+            "description": "IP地址",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "loginStatus",
+            "description": "登录状态",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "os",
+            "description": "操作信息",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "userName",
+            "description": "用户名",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "sys/log"
+        ],
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
+      }
+    },
+    "/api/sys/log/queryOperateLogDetail": {
+      "get": {
+        "operationId": "QueryOperateLogDetail",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/QueryOperateLogDetailResp"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "tags": [
+          "sys/log"
+        ],
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
+      }
+    },
+    "/api/sys/log/queryOperateLogList": {
+      "get": {
+        "operationId": "QueryOperateLogList",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/QueryOperateLogListResp"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "current",
+            "description": "第几页",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int64",
+            "default": "1"
+          },
+          {
+            "name": "pageSize",
+            "description": "每页的数量",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int64",
+            "default": "20"
+          },
+          {
+            "name": "deptName",
+            "description": "部门名称",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "operationIp",
+            "description": "操作地址",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "operationName",
+            "description": "操作人员",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "operationStatus",
+            "description": "操作状态",
+            "in": "query",
+            "required": false,
+            "type": "integer",
+            "format": "int32"
+          },
+          {
+            "name": "operationType",
+            "description": "操作类型",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "operationUrl",
+            "description": "操作方法",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "title",
+            "description": "系统模块",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "browser",
+            "description": "浏览器",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "os",
+            "description": "操作信息",
+            "in": "query",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "sys/log"
+        ],
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
+      }
+    },
+    "/api/sys/log/queryStatisticsLoginLog": {
+      "get": {
+        "operationId": "QueryStatisticsLoginLog",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/QueryStatisticsLoginLogResp"
+            }
+          }
+        },
+        "tags": [
+          "sys/log"
+        ],
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
+      }
+    },
+    "/api/sys/menu/addMenu": {
+      "post": {
+        "operationId": "AddMenu",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/AddMenuResp"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "description": " 添加菜单信息",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/AddMenuReq"
+            }
+          }
+        ],
+        "tags": [
+          "sys/menu"
+        ],
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
+      }
+    },
+    "/api/sys/menu/deleteMenu": {
+      "get": {
+        "operationId": "DeleteMenu",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/DeleteMenuResp"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "ids",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "tags": [
+          "sys/menu"
+        ],
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
+      }
+    },
+    "/api/sys/menu/queryMenuDetail": {
+      "get": {
+        "operationId": "QueryMenuDetail",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/QueryMenuDetailResp"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "tags": [
+          "sys/menu"
+        ],
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
+      }
+    },
+    "/api/sys/menu/queryMenuList": {
+      "get": {
+        "operationId": "QueryMenuList",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/QueryMenuListResp"
+            }
+          }
+        },
+        "tags": [
+          "sys/menu"
+        ],
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
+      }
+    },
+    "/api/sys/menu/updateMenu": {
+      "post": {
+        "operationId": "UpdateMenu",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/UpdateMenuResp"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "description": " 更新菜单信息",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/UpdateMenuReq"
+            }
+          }
+        ],
+        "tags": [
+          "sys/menu"
+        ],
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
+      }
+    },
+    "/api/sys/menu/updateMenuStatus": {
+      "post": {
+        "operationId": "UpdateMenuStatus",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/UpdateMenuStatusResp"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "description": " 批量更新菜单信息状态",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/UpdateMenuStatusReq"
+            }
+          }
+        ],
+        "tags": [
+          "sys/menu"
+        ],
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
+      }
+    },
+    "/api/sys/post/addPost": {
+      "post": {
+        "operationId": "AddPost",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/AddPostResp"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "description": " 添加岗位管理",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/AddPostReq"
+            }
+          }
+        ],
+        "tags": [
+          "sys/post"
+        ],
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
+      }
+    },
+    "/api/sys/post/deletePost": {
+      "get": {
+        "operationId": "DeletePost",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/DeletePostResp"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "ids",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "tags": [
+          "sys/post"
+        ],
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
+      }
+    },
+    "/api/sys/post/queryPostDetail": {
+      "get": {
+        "operationId": "QueryPostDetail",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/QueryPostDetailResp"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "tags": [
+          "sys/post"
+        ],
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
+      }
+    },
+    "/api/sys/post/queryPostList": {
+      "get": {
+        "operationId": "QueryPostList",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/QueryPostListResp"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "current",
+            "description": "第几页",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int64",
+            "default": "1"
+          },
+          {
+            "name": "pageSize",
+            "description": "每页的数量",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int64",
+            "default": "20"
+          },
+          {
+            "name": "postCode",
+            "description": "岗位编码",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "postName",
+            "description": "岗位名称",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "postStatus",
+            "description": "岗位状态",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "default": "2"
+          }
+        ],
+        "tags": [
+          "sys/post"
+        ],
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
+      }
+    },
+    "/api/sys/post/updatePost": {
+      "post": {
+        "operationId": "UpdatePost",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/UpdatePostResp"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "description": " 更新岗位管理",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/UpdatePostReq"
+            }
+          }
+        ],
+        "tags": [
+          "sys/post"
+        ],
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
+      }
+    },
+    "/api/sys/post/updatePostStatus": {
+      "post": {
+        "operationId": "UpdatePostStatus",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/UpdatePostStatusResp"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "description": " 批量更新岗位管理状态",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/UpdatePostStatusReq"
+            }
+          }
+        ],
+        "tags": [
+          "sys/post"
+        ],
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
+      }
+    },
+    "/api/sys/role/addRole": {
+      "post": {
+        "operationId": "AddRole",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/AddRoleResp"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "description": " 添加角色信息",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/AddRoleReq"
+            }
+          }
+        ],
+        "tags": [
+          "sys/role"
+        ],
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
+      }
+    },
+    "/api/sys/role/cancelAuthorization": {
+      "post": {
+        "operationId": "CancelAuthorization",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/CancelAuthorizationResp"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/CancelAuthorizationReq"
+            }
+          }
+        ],
+        "tags": [
+          "sys/role"
+        ],
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
+      }
+    },
+    "/api/sys/role/deleteRole": {
+      "get": {
+        "operationId": "DeleteRole",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/DeleteRoleResp"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "ids",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "tags": [
+          "sys/role"
+        ],
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
+      }
+    },
+    "/api/sys/role/queryRoleDetail": {
+      "get": {
+        "operationId": "QueryRoleDetail",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/QueryRoleDetailResp"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "tags": [
+          "sys/role"
+        ],
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
+      }
+    },
+    "/api/sys/role/queryRoleList": {
+      "get": {
+        "operationId": "QueryRoleList",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/QueryRoleListResp"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "current",
+            "description": "第几页",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int64",
+            "default": "1"
+          },
+          {
+            "name": "pageSize",
+            "description": "每页的数量",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int64",
+            "default": "20"
+          },
+          {
+            "name": "isAdmin",
+            "description": "是否超级管理员",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "default": "2"
+          },
+          {
+            "name": "roleKey",
+            "description": "权限字符",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "roleName",
+            "description": "角色名称",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "roleStatus",
+            "description": "角色状态",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "default": "2"
+          }
+        ],
+        "tags": [
+          "sys/role"
+        ],
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
+      }
+    },
+    "/api/sys/role/queryRoleMenuList": {
+      "get": {
+        "operationId": "QueryRoleMenuList",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/QueryRoleMenuListResp"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "roleId",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "tags": [
+          "sys/role"
+        ],
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
+      }
+    },
+    "/api/sys/role/queryRoleUserList": {
+      "get": {
+        "operationId": "QueryRoleUserList",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/QueryRoleUserListResp"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "current",
+            "description": "第几页",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int64",
+            "default": "1"
+          },
+          {
+            "name": "pageSize",
+            "description": "每页的数量",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int64",
+            "default": "20"
+          },
+          {
+            "name": "roleId",
+            "description": "角色id",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "isExist",
+            "description": "角色是否已经拥有用户",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "mobile",
+            "description": "手机号",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "userName",
+            "description": "昵称",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "sys/role"
+        ],
+        "consumes": [
+          "multipart/form-data"
+        ],
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
+      }
+    },
+    "/api/sys/role/updateRole": {
+      "post": {
+        "operationId": "UpdateRole",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/UpdateRoleResp"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "description": " 更新角色信息",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/UpdateRoleReq"
+            }
+          }
+        ],
+        "tags": [
+          "sys/role"
+        ],
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
+      }
+    },
+    "/api/sys/role/updateRoleMenuList": {
+      "post": {
+        "operationId": "UpdateRoleMenuList",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/UpdateRoleMenuListResp"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/UpdateRoleMenuListReq"
+            }
+          }
+        ],
+        "tags": [
+          "sys/role"
+        ],
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
+      }
+    },
+    "/api/sys/role/updateRoleStatus": {
+      "post": {
+        "operationId": "UpdateRoleStatus",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/UpdateRoleStatusResp"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "description": " 更新角色信息状态",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/UpdateRoleStatusReq"
+            }
+          }
+        ],
+        "tags": [
+          "sys/role"
+        ],
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
+      }
+    },
+    "/api/sys/upload": {
+      "post": {
+        "operationId": "Upload",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/UploadResp"
+            }
+          }
+        },
+        "tags": [
+          "sys/upload"
+        ],
+        "security": [
+          {
+            "apiKey": []
+          }
+        ]
+      }
+    },
+    "/api/sys/user/addUser": {
+      "post": {
+        "operationId": "AddUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/AddUserResp"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "description": " 添加用户信息",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/AddUserReq"
+            }
+          }
+        ],
+        "tags": [
+          "sys/user"
+        ]
+      }
+    },
+    "/api/sys/user/deleteUser": {
+      "get": {
+        "operationId": "DeleteUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/DeleteUserResp"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "ids",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "tags": [
+          "sys/user"
+        ],
+        "consumes": [
+          "multipart/form-data"
+        ]
+      }
+    },
+    "/api/sys/user/info": {
+      "get": {
+        "operationId": "UserInfo",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/userInfoResp"
+            }
+          }
+        },
+        "tags": [
+          "sys/user"
+        ]
+      }
+    },
+    "/api/sys/user/login": {
+      "post": {
+        "operationId": "UserLogin",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/LoginResp"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "description": " 用户登录",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/LoginReq"
+            }
+          }
+        ],
+        "tags": [
+          "sys/user"
+        ]
+      }
+    },
+    "/api/sys/user/queryDeptAndPostList": {
+      "get": {
+        "operationId": "QueryDeptAndPostList",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/QueryDeptAndPostListResp"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "current",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int64",
+            "default": "1"
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int64",
+            "default": "20"
+          }
+        ],
+        "tags": [
+          "sys/user"
+        ],
+        "consumes": [
+          "multipart/form-data"
+        ]
+      }
+    },
+    "/api/sys/user/queryUserDetail": {
+      "get": {
+        "operationId": "QueryUserDetail",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/QueryUserDetailResp"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          }
+        ],
+        "tags": [
+          "sys/user"
+        ],
+        "consumes": [
+          "multipart/form-data"
+        ]
+      }
+    },
+    "/api/sys/user/queryUserList": {
+      "get": {
+        "operationId": "QueryUserList",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/QueryUserListResp"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "current",
+            "description": "第几页",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int64",
+            "default": "1"
+          },
+          {
+            "name": "pageSize",
+            "description": "每页的数量",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int64",
+            "default": "20"
+          },
+          {
+            "name": "deptId",
+            "description": "部门id",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int64",
+            "default": "0"
+          },
+          {
+            "name": "email",
+            "description": "邮箱",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "mobile",
+            "description": "手机号",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "nickName",
+            "description": "昵称",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "userStatus",
+            "description": "帐号状态（0正常 1停用）",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int32",
+            "default": "2"
+          }
+        ],
+        "tags": [
+          "sys/user"
+        ],
+        "consumes": [
+          "multipart/form-data"
+        ]
+      }
+    },
+    "/api/sys/user/queryUserRoleList": {
+      "get": {
+        "operationId": "QueryUserRoleList",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/QueryUserRoleListResp"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "userId",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int64"
+          },
+          {
+            "name": "current",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int64",
+            "default": "1"
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": true,
+            "type": "integer",
+            "format": "int64",
+            "default": "20"
+          },
+          {
+            "name": "roleName",
+            "description": " 角色名称",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "roleKey",
+            "description": "权限字符",
+            "in": "query",
+            "required": false,
+            "type": "string"
+          }
+        ],
+        "tags": [
+          "sys/user"
+        ],
+        "consumes": [
+          "multipart/form-data"
+        ]
+      }
+    },
+    "/api/sys/user/reSetPassword": {
+      "post": {
+        "operationId": "ReSetPassword",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/ReSetPasswordResp"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/ReSetPasswordReq"
+            }
+          }
+        ],
+        "tags": [
+          "sys/user"
+        ]
+      }
+    },
+    "/api/sys/user/updateUser": {
+      "post": {
+        "operationId": "UpdateUser",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/UpdateUserResp"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "description": " 更新用户信息",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/UpdateUserReq"
+            }
+          }
+        ],
+        "tags": [
+          "sys/user"
+        ]
+      }
+    },
+    "/api/sys/user/updateUserRoleList": {
+      "post": {
+        "operationId": "UpdateUserRoleList",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/UpdateUserRoleResp"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/UpdateUserRoleReq"
+            }
+          }
+        ],
+        "tags": [
+          "sys/user"
+        ]
+      }
+    },
+    "/api/sys/user/updateUserStatus": {
+      "post": {
+        "operationId": "UpdateUserStatus",
+        "responses": {
+          "200": {
+            "description": "A successful response.",
+            "schema": {
+              "$ref": "#/definitions/UpdateUserStatusResp"
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "body",
+            "description": " 更新用户信息状态",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/UpdateUserStatusReq"
+            }
+          }
+        ],
+        "tags": [
+          "sys/user"
+        ]
+      }
+    }
+  },
+  "definitions": {
+    "AddDeptReq": {
+      "type": "object",
+      "properties": {
+        "deptName": {
+          "type": "string",
+          "description": "部门名称"
+        },
+        "deptSort": {
+          "type": "integer",
+          "format": "int32",
+          "description": "部门排序"
+        },
+        "deptStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "部门状态"
+        },
+        "email": {
+          "type": "string",
+          "description": "邮箱"
+        },
+        "leader": {
+          "type": "string",
+          "description": "负责人"
+        },
+        "parentId": {
+          "type": "integer",
+          "format": "int64",
+          "description": "上级机构ID，一级机构为0"
+        },
+        "parentIds": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "description": "上级机构IDs，一级机构为0"
+        },
+        "phone": {
+          "type": "string",
+          "description": "电话号码"
+        },
+        "remark": {
+          "type": "string",
+          "description": "备注信息"
+        }
+      },
+      "title": "AddDeptReq",
+      "required": [
+        "deptName",
+        "deptSort",
+        "deptStatus",
+        "email",
+        "leader",
+        "parentId",
+        "parentIds",
+        "phone"
+      ]
+    },
+    "AddDeptResp": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "AddDeptResp",
+      "required": [
+        "code",
+        "message"
+      ]
+    },
+    "AddDictItemReq": {
+      "type": "object",
+      "properties": {
+        "dictLabel": {
+          "type": "string",
+          "description": "字典标签"
+        },
+        "dictSort": {
+          "type": "integer",
+          "format": "int32",
+          "description": "排序"
+        },
+        "dictStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "字典状态"
+        },
+        "dictType": {
+          "type": "string",
+          "description": "字典类型"
+        },
+        "dictValue": {
+          "type": "string",
+          "description": "字典键值"
+        },
+        "isDefault": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否默认  0：否  1：是"
+        },
+        "remark": {
+          "type": "string",
+          "description": "备注信息"
+        }
+      },
+      "title": "AddDictItemReq",
+      "required": [
+        "dictLabel",
+        "dictSort",
+        "dictStatus",
+        "dictType",
+        "dictValue",
+        "isDefault"
+      ]
+    },
+    "AddDictItemResp": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "AddDictItemResp",
+      "required": [
+        "code",
+        "message"
+      ]
+    },
+    "AddDictTypeReq": {
+      "type": "object",
+      "properties": {
+        "dictName": {
+          "type": "string",
+          "description": "字典名称"
+        },
+        "dictStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "字典状态"
+        },
+        "dictType": {
+          "type": "string",
+          "description": "字典类型"
+        },
+        "isSystem": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否系统预留  0：否  1：是"
+        },
+        "remark": {
+          "type": "string",
+          "description": "备注信息"
+        }
+      },
+      "title": "AddDictTypeReq",
+      "required": [
+        "dictName",
+        "dictStatus",
+        "dictType",
+        "isSystem"
+      ]
+    },
+    "AddDictTypeResp": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "AddDictTypeResp",
+      "required": [
+        "code",
+        "message"
+      ]
+    },
+    "AddMenuReq": {
+      "type": "object",
+      "properties": {
+        "backgroundUrl": {
+          "type": "string",
+          "description": "接口地址"
+        },
+        "menuIcon": {
+          "type": "string",
+          "description": "菜单图标"
+        },
+        "menuName": {
+          "type": "string",
+          "description": "菜单名称"
+        },
+        "menuPath": {
+          "type": "string",
+          "description": "前端路由"
+        },
+        "menuPerms": {
+          "type": "string",
+          "description": "权限标识"
+        },
+        "menuSort": {
+          "type": "integer",
+          "format": "int32",
+          "description": "菜单排序"
+        },
+        "menuStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "菜单状态"
+        },
+        "menuType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "类型 0：目录,1：菜单,2：按钮,3：外链"
+        },
+        "parentId": {
+          "type": "integer",
+          "format": "int64",
+          "description": "父菜单ID，一级菜单为0"
+        },
+        "remark": {
+          "type": "string",
+          "description": "备注信息"
+        },
+        "vueComponent": {
+          "type": "string",
+          "description": "vue的页面"
+        },
+        "vueIcon": {
+          "type": "string",
+          "description": "vue的图标"
+        },
+        "vuePath": {
+          "type": "string",
+          "description": "vue系统的path"
+        },
+        "vueRedirect": {
+          "type": "string",
+          "description": "vue的路由重定向"
+        },
+        "isVisible": {
+          "type": "integer",
+          "format": "int32",
+          "default": "1",
+          "description": "是否可见  0：否  1：是"
+        }
+      },
+      "title": "AddMenuReq",
+      "required": [
+        "menuName",
+        "isVisible"
+      ]
+    },
+    "AddMenuResp": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "AddMenuResp",
+      "required": [
+        "code",
+        "message"
+      ]
+    },
+    "AddPostReq": {
+      "type": "object",
+      "properties": {
+        "postCode": {
+          "type": "string",
+          "description": "岗位编码"
+        },
+        "postName": {
+          "type": "string",
+          "description": "岗位名称"
+        },
+        "postSort": {
+          "type": "integer",
+          "format": "int32",
+          "description": "岗位排序"
+        },
+        "postStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "岗位状态"
+        },
+        "remark": {
+          "type": "string",
+          "description": "备注信息"
+        }
+      },
+      "title": "AddPostReq",
+      "required": [
+        "postCode",
+        "postName",
+        "postSort",
+        "postStatus"
+      ]
+    },
+    "AddPostResp": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "AddPostResp",
+      "required": [
+        "code",
+        "message"
+      ]
+    },
+    "AddRoleReq": {
+      "type": "object",
+      "properties": {
+        "dataScope": {
+          "type": "integer",
+          "format": "int32",
+          "default": "0",
+          "description": "数据权限"
+        },
+        "isAdmin": {
+          "type": "integer",
+          "format": "int32",
+          "default": "0",
+          "description": "是否超级管理员"
+        },
+        "remark": {
+          "type": "string",
+          "description": "备注"
+        },
+        "roleKey": {
+          "type": "string",
+          "description": "权限字符"
+        },
+        "roleName": {
+          "type": "string",
+          "description": "角色名称"
+        },
+        "roleSort": {
+          "type": "integer",
+          "format": "int32",
+          "description": "角色排序"
+        },
+        "roleStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "角色状态"
+        }
+      },
+      "title": "AddRoleReq",
+      "required": [
+        "dataScope",
+        "isAdmin",
+        "roleKey",
+        "roleName",
+        "roleSort",
+        "roleStatus"
+      ]
+    },
+    "AddRoleResp": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "AddRoleResp",
+      "required": [
+        "code",
+        "message"
+      ]
+    },
+    "AddUserReq": {
+      "type": "object",
+      "properties": {
+        "avatar": {
+          "type": "string",
+          "description": "头像"
+        },
+        "deptId": {
+          "type": "integer",
+          "format": "int64",
+          "description": "部门id"
+        },
+        "postIds": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "description": "部门id"
+        },
+        "email": {
+          "type": "string",
+          "description": "邮箱"
+        },
+        "mobile": {
+          "type": "string",
+          "description": "手机号"
+        },
+        "nickName": {
+          "type": "string",
+          "description": "昵称"
+        },
+        "remark": {
+          "type": "string",
+          "description": "备注信息"
+        },
+        "userName": {
+          "type": "string",
+          "description": "用户名"
+        },
+        "userStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "帐号状态（0正常 1停用）"
+        }
+      },
+      "title": "AddUserReq",
+      "required": [
+        "mobile",
+        "nickName",
+        "userName",
+        "userStatus"
+      ]
+    },
+    "AddUserResp": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "AddUserResp",
+      "required": [
+        "code",
+        "message"
+      ]
+    },
+    "CancelAuthorizationReq": {
+      "type": "object",
+      "properties": {
+        "roleId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "userIds": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "isExist": {
+          "type": "integer",
+          "format": "int64",
+          "description": "0：取消授权，1：确认授权"
+        }
+      },
+      "title": "CancelAuthorizationReq",
+      "required": [
+        "roleId",
+        "userIds",
+        "isExist"
+      ]
+    },
+    "CancelAuthorizationResp": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "CancelAuthorizationResp",
+      "required": [
+        "code",
+        "message"
+      ]
+    },
+    "DeleteDeptReq": {
+      "type": "object",
+      "properties": {
+        "ids": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "title": "DeleteDeptReq",
+      "required": [
+        "ids"
+      ]
+    },
+    "DeleteDeptResp": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "DeleteDeptResp",
+      "required": [
+        "code",
+        "message"
+      ]
+    },
+    "DeleteDictItemReq": {
+      "type": "object",
+      "properties": {
+        "ids": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "title": "DeleteDictItemReq",
+      "required": [
+        "ids"
+      ]
+    },
+    "DeleteDictItemResp": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "DeleteDictItemResp",
+      "required": [
+        "code",
+        "message"
+      ]
+    },
+    "DeleteDictTypeReq": {
+      "type": "object",
+      "properties": {
+        "ids": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "title": "DeleteDictTypeReq",
+      "required": [
+        "ids"
+      ]
+    },
+    "DeleteDictTypeResp": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "DeleteDictTypeResp",
+      "required": [
+        "code",
+        "message"
+      ]
+    },
+    "DeleteLoginLogReq": {
+      "type": "object",
+      "properties": {
+        "ids": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "title": "DeleteLoginLogReq",
+      "required": [
+        "ids"
+      ]
+    },
+    "DeleteLoginLogResp": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "DeleteLoginLogResp",
+      "required": [
+        "code",
+        "message"
+      ]
+    },
+    "DeleteMenuReq": {
+      "type": "object",
+      "properties": {
+        "ids": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "title": "DeleteMenuReq",
+      "required": [
+        "ids"
+      ]
+    },
+    "DeleteMenuResp": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "DeleteMenuResp",
+      "required": [
+        "code",
+        "message"
+      ]
+    },
+    "DeleteOperateLogReq": {
+      "type": "object",
+      "properties": {
+        "ids": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "title": "DeleteOperateLogReq",
+      "required": [
+        "ids"
+      ]
+    },
+    "DeleteOperateLogResp": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "DeleteOperateLogResp",
+      "required": [
+        "code",
+        "message"
+      ]
+    },
+    "DeletePostReq": {
+      "type": "object",
+      "properties": {
+        "ids": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "title": "DeletePostReq",
+      "required": [
+        "ids"
+      ]
+    },
+    "DeletePostResp": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "DeletePostResp",
+      "required": [
+        "code",
+        "message"
+      ]
+    },
+    "DeleteRoleReq": {
+      "type": "object",
+      "properties": {
+        "ids": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "title": "DeleteRoleReq",
+      "required": [
+        "ids"
+      ]
+    },
+    "DeleteRoleResp": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "DeleteRoleResp",
+      "required": [
+        "code",
+        "message"
+      ]
+    },
+    "DeleteUserReq": {
+      "type": "object",
+      "properties": {
+        "ids": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "title": "DeleteUserReq",
+      "required": [
+        "ids"
+      ]
+    },
+    "DeleteUserResp": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "DeleteUserResp",
+      "required": [
+        "code",
+        "message"
+      ]
+    },
+    "DeptList": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "key": {
+          "type": "string"
+        },
+        "value": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "parentId": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "DeptList",
+      "required": [
+        "id",
+        "key",
+        "value",
+        "title",
+        "parentId"
+      ]
+    },
+    "ListMenuTree": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "description": " 编号"
+        },
+        "path": {
+          "type": "string",
+          "description": " 菜单路径"
+        },
+        "name": {
+          "type": "string",
+          "description": " 菜单名称"
+        },
+        "parentId": {
+          "type": "integer",
+          "format": "int64",
+          "description": " 父菜单ID，一级菜单为0"
+        },
+        "icon": {
+          "type": "string",
+          "description": " 菜单图标"
+        }
+      },
+      "title": "ListMenuTree",
+      "required": [
+        "id",
+        "path",
+        "name",
+        "parentId",
+        "icon"
+      ]
+    },
+    "ListMenuTreeVue": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "parentId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "title": {
+          "type": "string"
+        },
+        "path": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "icon": {
+          "type": "string"
+        },
+        "redirect": {
+          "type": "string"
+        },
+        "component": {
+          "type": "string"
+        },
+        "meta": {
+          "$ref": "#/definitions/MenuTreeMeta"
+        }
+      },
+      "title": "ListMenuTreeVue",
+      "required": [
+        "id",
+        "parentId",
+        "title",
+        "path",
+        "name",
+        "icon",
+        "redirect",
+        "component",
+        "meta"
+      ]
+    },
+    "LoginData": {
+      "type": "object",
+      "properties": {
+        "token": {
+          "type": "string"
+        }
+      },
+      "title": "LoginData",
+      "required": [
+        "token"
+      ]
+    },
+    "LoginReq": {
+      "type": "object",
+      "properties": {
+        "account": {
+          "type": "string",
+          "description": "手机号或者用户名"
+        },
+        "password": {
+          "type": "string"
+        }
+      },
+      "title": "LoginReq",
+      "required": [
+        "account",
+        "password"
+      ]
+    },
+    "LoginResp": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/definitions/LoginData"
+        }
+      },
+      "title": "LoginResp",
+      "required": [
+        "code",
+        "message",
+        "data"
+      ]
+    },
+    "MenuTreeListData": {
+      "type": "object",
+      "properties": {
+        "key": {
+          "type": "string",
+          "description": " 菜单名称"
+        },
+        "title": {
+          "type": "string",
+          "description": " 菜单名称"
+        },
+        "parentId": {
+          "type": "integer",
+          "format": "int64",
+          "description": " 父菜单ID，一级菜单为0"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "description": " 父菜单ID，一级菜单为0"
+        },
+        "label": {
+          "type": "string",
+          "description": " 父菜单ID，一级菜单为0"
+        }
+      },
+      "title": "MenuTreeListData",
+      "required": [
+        "key",
+        "title",
+        "parentId",
+        "id",
+        "label"
+      ]
+    },
+    "MenuTreeMeta": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "icon": {
+          "type": "string"
+        }
+      },
+      "title": "MenuTreeMeta",
+      "required": [
+        "title",
+        "icon"
+      ]
+    },
+    "PostList": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "postName": {
+          "type": "string"
+        }
+      },
+      "title": "PostList",
+      "required": [
+        "id",
+        "postName"
+      ]
+    },
+    "QueryDeptAndPostListData": {
+      "type": "object",
+      "properties": {
+        "deptList": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/DeptList"
+          }
+        },
+        "postList": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PostList"
+          }
+        }
+      },
+      "title": "QueryDeptAndPostListData",
+      "required": [
+        "deptList",
+        "postList"
+      ]
+    },
+    "QueryDeptAndPostListReq": {
+      "type": "object",
+      "properties": {
+        "current": {
+          "type": "integer",
+          "format": "int64",
+          "default": "1"
+        },
+        "pageSize": {
+          "type": "integer",
+          "format": "int64",
+          "default": "20"
+        }
+      },
+      "title": "QueryDeptAndPostListReq",
+      "required": [
+        "current",
+        "pageSize"
+      ]
+    },
+    "QueryDeptAndPostListResp": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/definitions/QueryDeptAndPostListData"
+        }
+      },
+      "title": "QueryDeptAndPostListResp",
+      "required": [
+        "code",
+        "message",
+        "data"
+      ]
+    },
+    "QueryDeptDetailData": {
+      "type": "object",
+      "properties": {
+        "createBy": {
+          "type": "string",
+          "description": "创建者"
+        },
+        "createTime": {
+          "type": "string",
+          "description": "创建时间"
+        },
+        "deptName": {
+          "type": "string",
+          "description": "部门名称"
+        },
+        "deptSort": {
+          "type": "integer",
+          "format": "int32",
+          "description": "部门排序"
+        },
+        "deptStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "部门状态"
+        },
+        "email": {
+          "type": "string",
+          "description": "邮箱"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "description": "编号"
+        },
+        "leader": {
+          "type": "string",
+          "description": "负责人"
+        },
+        "parentId": {
+          "type": "integer",
+          "format": "int64",
+          "description": "上级机构ID，一级机构为0"
+        },
+        "parentIds": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "description": "上级机构IDs，一级机构为0"
+        },
+        "phone": {
+          "type": "string",
+          "description": "电话号码"
+        },
+        "remark": {
+          "type": "string",
+          "description": "备注信息"
+        },
+        "updateBy": {
+          "type": "string",
+          "description": "更新者"
+        },
+        "updateTime": {
+          "type": "string",
+          "description": "更新时间"
+        }
+      },
+      "title": "QueryDeptDetailData",
+      "required": [
+        "createBy",
+        "createTime",
+        "deptName",
+        "deptSort",
+        "deptStatus",
+        "email",
+        "id",
+        "leader",
+        "parentId",
+        "parentIds",
+        "phone",
+        "remark",
+        "updateBy",
+        "updateTime"
+      ]
+    },
+    "QueryDeptDetailReq": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "QueryDeptDetailReq",
+      "required": [
+        "id"
+      ]
+    },
+    "QueryDeptDetailResp": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/definitions/QueryDeptDetailData"
+        }
+      },
+      "title": "QueryDeptDetailResp",
+      "required": [
+        "code",
+        "message",
+        "data"
+      ]
+    },
+    "QueryDeptListData": {
+      "type": "object",
+      "properties": {
+        "createBy": {
+          "type": "string",
+          "description": "创建者"
+        },
+        "createTime": {
+          "type": "string",
+          "description": "创建时间"
+        },
+        "deptName": {
+          "type": "string",
+          "description": "部门名称"
+        },
+        "deptSort": {
+          "type": "integer",
+          "format": "int32",
+          "description": "部门排序"
+        },
+        "deptStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "部门状态"
+        },
+        "email": {
+          "type": "string",
+          "description": "邮箱"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "description": "编号"
+        },
+        "leader": {
+          "type": "string",
+          "description": "负责人"
+        },
+        "parentId": {
+          "type": "integer",
+          "format": "int64",
+          "description": "上级机构ID，一级机构为0"
+        },
+        "parentIds": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "description": "上级机构IDs，一级机构为0"
+        },
+        "phone": {
+          "type": "string",
+          "description": "电话号码"
+        },
+        "remark": {
+          "type": "string",
+          "description": "备注信息"
+        },
+        "updateBy": {
+          "type": "string",
+          "description": "更新者"
+        },
+        "updateTime": {
+          "type": "string",
+          "description": "更新时间"
+        }
+      },
+      "title": "QueryDeptListData",
+      "required": [
+        "createBy",
+        "createTime",
+        "deptName",
+        "deptSort",
+        "deptStatus",
+        "email",
+        "id",
+        "leader",
+        "parentId",
+        "parentIds",
+        "phone",
+        "remark",
+        "updateBy",
+        "updateTime"
+      ]
+    },
+    "QueryDeptListReq": {
+      "type": "object",
+      "title": "QueryDeptListReq"
+    },
+    "QueryDeptListResp": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "current": {
+          "type": "integer",
+          "format": "int64",
+          "default": "1"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/QueryDeptListData"
+          }
+        },
+        "pageSize": {
+          "type": "integer",
+          "format": "int64",
+          "default": "20"
+        },
+        "success": {
+          "type": "boolean",
+          "format": "boolean"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "QueryDeptListResp",
+      "required": [
+        "code",
+        "message",
+        "current",
+        "data",
+        "pageSize",
+        "success",
+        "total"
+      ]
+    },
+    "QueryDictItemDetailData": {
+      "type": "object",
+      "properties": {
+        "createBy": {
+          "type": "string",
+          "description": "创建者"
+        },
+        "createTime": {
+          "type": "string",
+          "description": "创建时间"
+        },
+        "dictLabel": {
+          "type": "string",
+          "description": "字典标签"
+        },
+        "dictSort": {
+          "type": "integer",
+          "format": "int32",
+          "description": "排序"
+        },
+        "dictStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "字典状态"
+        },
+        "dictType": {
+          "type": "string",
+          "description": "字典类型"
+        },
+        "dictValue": {
+          "type": "string",
+          "description": "字典键值"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "description": "编号"
+        },
+        "isDefault": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否默认  0：否  1：是"
+        },
+        "remark": {
+          "type": "string",
+          "description": "备注信息"
+        },
+        "updateBy": {
+          "type": "string",
+          "description": "更新者"
+        },
+        "updateTime": {
+          "type": "string",
+          "description": "更新时间"
+        }
+      },
+      "title": "QueryDictItemDetailData",
+      "required": [
+        "createBy",
+        "createTime",
+        "dictLabel",
+        "dictSort",
+        "dictStatus",
+        "dictType",
+        "dictValue",
+        "id",
+        "isDefault",
+        "remark",
+        "updateBy",
+        "updateTime"
+      ]
+    },
+    "QueryDictItemDetailReq": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "QueryDictItemDetailReq",
+      "required": [
+        "id"
+      ]
+    },
+    "QueryDictItemDetailResp": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/definitions/QueryDictItemDetailData"
+        }
+      },
+      "title": "QueryDictItemDetailResp",
+      "required": [
+        "code",
+        "message",
+        "data"
+      ]
+    },
+    "QueryDictItemListData": {
+      "type": "object",
+      "properties": {
+        "createBy": {
+          "type": "string",
+          "description": "创建者"
+        },
+        "createTime": {
+          "type": "string",
+          "description": "创建时间"
+        },
+        "dictLabel": {
+          "type": "string",
+          "description": "字典标签"
+        },
+        "dictSort": {
+          "type": "integer",
+          "format": "int32",
+          "description": "排序"
+        },
+        "dictStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "字典状态"
+        },
+        "dictType": {
+          "type": "string",
+          "description": "字典类型"
+        },
+        "dictValue": {
+          "type": "string",
+          "description": "字典键值"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "description": "编号"
+        },
+        "isDefault": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否默认  0：否  1：是"
+        },
+        "remark": {
+          "type": "string",
+          "description": "备注信息"
+        },
+        "updateBy": {
+          "type": "string",
+          "description": "更新者"
+        },
+        "updateTime": {
+          "type": "string",
+          "description": "更新时间"
+        }
+      },
+      "title": "QueryDictItemListData",
+      "required": [
+        "createBy",
+        "createTime",
+        "dictLabel",
+        "dictSort",
+        "dictStatus",
+        "dictType",
+        "dictValue",
+        "id",
+        "isDefault",
+        "remark",
+        "updateBy",
+        "updateTime"
+      ]
+    },
+    "QueryDictItemListReq": {
+      "type": "object",
+      "properties": {
+        "current": {
+          "type": "integer",
+          "format": "int64",
+          "default": "1",
+          "description": "第几页"
+        },
+        "pageSize": {
+          "type": "integer",
+          "format": "int64",
+          "default": "20",
+          "description": "每页的数量"
+        },
+        "dictLabel": {
+          "type": "string",
+          "description": "字典标签"
+        },
+        "dictStatus": {
+          "type": "integer",
+          "format": "int32",
+          "default": "2",
+          "description": "字典状态"
+        },
+        "dictType": {
+          "type": "string",
+          "description": "字典类型"
+        }
+      },
+      "title": "QueryDictItemListReq",
+      "required": [
+        "current",
+        "pageSize",
+        "dictStatus"
+      ]
+    },
+    "QueryDictItemListResp": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "current": {
+          "type": "integer",
+          "format": "int64",
+          "default": "1"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/QueryDictItemListData"
+          }
+        },
+        "pageSize": {
+          "type": "integer",
+          "format": "int64",
+          "default": "20"
+        },
+        "success": {
+          "type": "boolean",
+          "format": "boolean"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "QueryDictItemListResp",
+      "required": [
+        "code",
+        "message",
+        "current",
+        "data",
+        "pageSize",
+        "success",
+        "total"
+      ]
+    },
+    "QueryDictTypeDetailData": {
+      "type": "object",
+      "properties": {
+        "createBy": {
+          "type": "string",
+          "description": "创建者"
+        },
+        "createTime": {
+          "type": "string",
+          "description": "创建时间"
+        },
+        "dictName": {
+          "type": "string",
+          "description": "字典名称"
+        },
+        "dictStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "字典状态"
+        },
+        "dictType": {
+          "type": "string",
+          "description": "字典类型"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "description": "编号"
+        },
+        "isSystem": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否系统预留  0：否  1：是"
+        },
+        "remark": {
+          "type": "string",
+          "description": "备注信息"
+        },
+        "updateBy": {
+          "type": "string",
+          "description": "更新者"
+        },
+        "updateTime": {
+          "type": "string",
+          "description": "更新时间"
+        }
+      },
+      "title": "QueryDictTypeDetailData",
+      "required": [
+        "createBy",
+        "createTime",
+        "dictName",
+        "dictStatus",
+        "dictType",
+        "id",
+        "isSystem",
+        "remark",
+        "updateBy",
+        "updateTime"
+      ]
+    },
+    "QueryDictTypeDetailReq": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "QueryDictTypeDetailReq",
+      "required": [
+        "id"
+      ]
+    },
+    "QueryDictTypeDetailResp": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/definitions/QueryDictTypeDetailData"
+        }
+      },
+      "title": "QueryDictTypeDetailResp",
+      "required": [
+        "code",
+        "message",
+        "data"
+      ]
+    },
+    "QueryDictTypeListData": {
+      "type": "object",
+      "properties": {
+        "createBy": {
+          "type": "string",
+          "description": "创建者"
+        },
+        "createTime": {
+          "type": "string",
+          "description": "创建时间"
+        },
+        "dictName": {
+          "type": "string",
+          "description": "字典名称"
+        },
+        "dictStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "字典状态"
+        },
+        "dictType": {
+          "type": "string",
+          "description": "字典类型"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "description": "编号"
+        },
+        "isSystem": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否系统预留  0：否  1：是"
+        },
+        "remark": {
+          "type": "string",
+          "description": "备注信息"
+        },
+        "updateBy": {
+          "type": "string",
+          "description": "更新者"
+        },
+        "updateTime": {
+          "type": "string",
+          "description": "更新时间"
+        }
+      },
+      "title": "QueryDictTypeListData",
+      "required": [
+        "createBy",
+        "createTime",
+        "dictName",
+        "dictStatus",
+        "dictType",
+        "id",
+        "isSystem",
+        "remark",
+        "updateBy",
+        "updateTime"
+      ]
+    },
+    "QueryDictTypeListReq": {
+      "type": "object",
+      "properties": {
+        "current": {
+          "type": "integer",
+          "format": "int64",
+          "default": "1",
+          "description": "第几页"
+        },
+        "pageSize": {
+          "type": "integer",
+          "format": "int64",
+          "default": "20",
+          "description": "每页的数量"
+        },
+        "dictName": {
+          "type": "string",
+          "description": "字典名称"
+        },
+        "dictStatus": {
+          "type": "integer",
+          "format": "int32",
+          "default": "2",
+          "description": "字典状态"
+        },
+        "dictType": {
+          "type": "string",
+          "description": "字典类型"
+        },
+        "isSystem": {
+          "type": "integer",
+          "format": "int32",
+          "default": "2",
+          "description": "是否系统预留  0：否  1：是"
+        }
+      },
+      "title": "QueryDictTypeListReq",
+      "required": [
+        "current",
+        "pageSize",
+        "dictStatus",
+        "isSystem"
+      ]
+    },
+    "QueryDictTypeListResp": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "current": {
+          "type": "integer",
+          "format": "int64",
+          "default": "1"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/QueryDictTypeListData"
+          }
+        },
+        "pageSize": {
+          "type": "integer",
+          "format": "int64",
+          "default": "20"
+        },
+        "success": {
+          "type": "boolean",
+          "format": "boolean"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "QueryDictTypeListResp",
+      "required": [
+        "code",
+        "message",
+        "current",
+        "data",
+        "pageSize",
+        "success",
+        "total"
+      ]
+    },
+    "QueryLoginLogDetailData": {
+      "type": "object",
+      "properties": {
+        "browser": {
+          "type": "string",
+          "description": "浏览器"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "description": "编号"
+        },
+        "ipAddress": {
+          "type": "string",
+          "description": "IP地址"
+        },
+        "loginStatus": {
+          "type": "string",
+          "description": "登录状态"
+        },
+        "loginTime": {
+          "type": "string",
+          "description": "登录时间"
+        },
+        "os": {
+          "type": "string",
+          "description": "操作信息"
+        },
+        "userName": {
+          "type": "string",
+          "description": "用户名"
+        },
+        "errorMsg": {
+          "type": "string",
+          "description": "操作信息"
+        }
+      },
+      "title": "QueryLoginLogDetailData",
+      "required": [
+        "browser",
+        "id",
+        "ipAddress",
+        "loginStatus",
+        "loginTime",
+        "os",
+        "userName",
+        "errorMsg"
+      ]
+    },
+    "QueryLoginLogDetailReq": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "QueryLoginLogDetailReq",
+      "required": [
+        "id"
+      ]
+    },
+    "QueryLoginLogDetailResp": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/definitions/QueryLoginLogDetailData"
+        }
+      },
+      "title": "QueryLoginLogDetailResp",
+      "required": [
+        "code",
+        "message",
+        "data"
+      ]
+    },
+    "QueryLoginLogListData": {
+      "type": "object",
+      "properties": {
+        "browser": {
+          "type": "string",
+          "description": "浏览器"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "description": "编号"
+        },
+        "ipAddress": {
+          "type": "string",
+          "description": "IP地址"
+        },
+        "loginStatus": {
+          "type": "string",
+          "description": "登录状态"
+        },
+        "loginTime": {
+          "type": "string",
+          "description": "登录时间"
+        },
+        "os": {
+          "type": "string",
+          "description": "操作信息"
+        },
+        "userName": {
+          "type": "string",
+          "description": "用户名"
+        },
+        "errorMsg": {
+          "type": "string",
+          "description": "操作信息"
+        }
+      },
+      "title": "QueryLoginLogListData",
+      "required": [
+        "browser",
+        "id",
+        "ipAddress",
+        "loginStatus",
+        "loginTime",
+        "os",
+        "userName",
+        "errorMsg"
+      ]
+    },
+    "QueryLoginLogListReq": {
+      "type": "object",
+      "properties": {
+        "current": {
+          "type": "integer",
+          "format": "int64",
+          "default": "1",
+          "description": "第几页"
+        },
+        "pageSize": {
+          "type": "integer",
+          "format": "int64",
+          "default": "20",
+          "description": "每页的数量"
+        },
+        "browser": {
+          "type": "string",
+          "description": "浏览器"
+        },
+        "ipAddress": {
+          "type": "string",
+          "description": "IP地址"
+        },
+        "loginStatus": {
+          "type": "string",
+          "description": "登录状态"
+        },
+        "os": {
+          "type": "string",
+          "description": "操作信息"
+        },
+        "userName": {
+          "type": "string",
+          "description": "用户名"
+        }
+      },
+      "title": "QueryLoginLogListReq",
+      "required": [
+        "current",
+        "pageSize"
+      ]
+    },
+    "QueryLoginLogListResp": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "current": {
+          "type": "integer",
+          "format": "int64",
+          "default": "1"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/QueryLoginLogListData"
+          }
+        },
+        "pageSize": {
+          "type": "integer",
+          "format": "int64",
+          "default": "20"
+        },
+        "success": {
+          "type": "boolean",
+          "format": "boolean"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "QueryLoginLogListResp",
+      "required": [
+        "code",
+        "message",
+        "current",
+        "data",
+        "pageSize",
+        "success",
+        "total"
+      ]
+    },
+    "QueryMenuDetailData": {
+      "type": "object",
+      "properties": {
+        "backgroundUrl": {
+          "type": "string",
+          "description": "接口地址"
+        },
+        "createBy": {
+          "type": "string",
+          "description": "创建者"
+        },
+        "createTime": {
+          "type": "string",
+          "description": "创建时间"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "description": "编号"
+        },
+        "menuIcon": {
+          "type": "string",
+          "description": "菜单图标"
+        },
+        "menuName": {
+          "type": "string",
+          "description": "菜单名称"
+        },
+        "menuPath": {
+          "type": "string",
+          "description": "前端路由"
+        },
+        "menuPerms": {
+          "type": "string",
+          "description": "权限标识"
+        },
+        "menuSort": {
+          "type": "integer",
+          "format": "int32",
+          "description": "菜单排序"
+        },
+        "menuStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "菜单状态"
+        },
+        "menuType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "类型 0：目录,1：菜单,2：按钮,3：外链"
+        },
+        "parentId": {
+          "type": "integer",
+          "format": "int64",
+          "description": "父菜单ID，一级菜单为0"
+        },
+        "remark": {
+          "type": "string",
+          "description": "备注信息"
+        },
+        "updateBy": {
+          "type": "string",
+          "description": "更新者"
+        },
+        "updateTime": {
+          "type": "string",
+          "description": "更新时间"
+        },
+        "vueComponent": {
+          "type": "string",
+          "description": "vue的页面"
+        },
+        "vueIcon": {
+          "type": "string",
+          "description": "vue的图标"
+        },
+        "vuePath": {
+          "type": "string",
+          "description": "vue系统的path"
+        },
+        "vueRedirect": {
+          "type": "string",
+          "description": "vue的路由重定向"
+        },
+        "isVisible": {
+          "type": "integer",
+          "format": "int32",
+          "default": "1",
+          "description": "是否可见  0：否  1：是"
+        }
+      },
+      "title": "QueryMenuDetailData",
+      "required": [
+        "backgroundUrl",
+        "createBy",
+        "createTime",
+        "id",
+        "menuIcon",
+        "menuName",
+        "menuPath",
+        "menuPerms",
+        "menuSort",
+        "menuStatus",
+        "menuType",
+        "parentId",
+        "remark",
+        "updateBy",
+        "updateTime",
+        "vueComponent",
+        "vueIcon",
+        "vuePath",
+        "vueRedirect",
+        "isVisible"
+      ]
+    },
+    "QueryMenuDetailReq": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "QueryMenuDetailReq",
+      "required": [
+        "id"
+      ]
+    },
+    "QueryMenuDetailResp": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/definitions/QueryMenuDetailData"
+        }
+      },
+      "title": "QueryMenuDetailResp",
+      "required": [
+        "code",
+        "message",
+        "data"
+      ]
+    },
+    "QueryMenuListData": {
+      "type": "object",
+      "properties": {
+        "backgroundUrl": {
+          "type": "string",
+          "description": "接口地址"
+        },
+        "createBy": {
+          "type": "string",
+          "description": "创建者"
+        },
+        "createTime": {
+          "type": "string",
+          "description": "创建时间"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "description": "编号"
+        },
+        "menuIcon": {
+          "type": "string",
+          "description": "菜单图标"
+        },
+        "menuName": {
+          "type": "string",
+          "description": "菜单名称"
+        },
+        "menuPath": {
+          "type": "string",
+          "description": "前端路由"
+        },
+        "menuPerms": {
+          "type": "string",
+          "description": "权限标识"
+        },
+        "menuSort": {
+          "type": "integer",
+          "format": "int32",
+          "description": "菜单排序"
+        },
+        "menuStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "菜单状态"
+        },
+        "menuType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "类型 0：目录,1：菜单,2：按钮,3：外链"
+        },
+        "parentId": {
+          "type": "integer",
+          "format": "int64",
+          "description": "父菜单ID，一级菜单为0"
+        },
+        "remark": {
+          "type": "string",
+          "description": "备注信息"
+        },
+        "updateBy": {
+          "type": "string",
+          "description": "更新者"
+        },
+        "updateTime": {
+          "type": "string",
+          "description": "更新时间"
+        },
+        "vueComponent": {
+          "type": "string",
+          "description": "vue的页面"
+        },
+        "vueIcon": {
+          "type": "string",
+          "description": "vue的图标"
+        },
+        "vuePath": {
+          "type": "string",
+          "description": "vue系统的path"
+        },
+        "vueRedirect": {
+          "type": "string",
+          "description": "vue的路由重定向"
+        },
+        "isVisible": {
+          "type": "integer",
+          "format": "int32",
+          "default": "1",
+          "description": "是否可见  0：否  1：是"
+        }
+      },
+      "title": "QueryMenuListData",
+      "required": [
+        "backgroundUrl",
+        "createBy",
+        "createTime",
+        "id",
+        "menuIcon",
+        "menuName",
+        "menuPath",
+        "menuPerms",
+        "menuSort",
+        "menuStatus",
+        "menuType",
+        "parentId",
+        "remark",
+        "updateBy",
+        "updateTime",
+        "vueComponent",
+        "vueIcon",
+        "vuePath",
+        "vueRedirect",
+        "isVisible"
+      ]
+    },
+    "QueryMenuListReq": {
+      "type": "object",
+      "title": "QueryMenuListReq"
+    },
+    "QueryMenuListResp": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "current": {
+          "type": "integer",
+          "format": "int64",
+          "default": "1"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/QueryMenuListData"
+          }
+        },
+        "pageSize": {
+          "type": "integer",
+          "format": "int64",
+          "default": "20"
+        },
+        "success": {
+          "type": "boolean",
+          "format": "boolean"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "QueryMenuListResp",
+      "required": [
+        "code",
+        "message",
+        "current",
+        "data",
+        "pageSize",
+        "success",
+        "total"
+      ]
+    },
+    "QueryOperateLogDetailData": {
+      "type": "object",
+      "properties": {
+        "deptName": {
+          "type": "string",
+          "description": "部门名称"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "description": "编号"
+        },
+        "operationIp": {
+          "type": "string",
+          "description": "操作地址"
+        },
+        "operationName": {
+          "type": "string",
+          "description": "操作人员"
+        },
+        "operationParams": {
+          "type": "string",
+          "description": "请求参数"
+        },
+        "operationResponse": {
+          "type": "string",
+          "description": "响应参数"
+        },
+        "operationStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "操作状态"
+        },
+        "operationTime": {
+          "type": "string",
+          "description": "操作时间"
+        },
+        "operationType": {
+          "type": "string",
+          "description": "操作类型"
+        },
+        "operationUrl": {
+          "type": "string",
+          "description": "操作方法"
+        },
+        "requestMethod": {
+          "type": "string",
+          "description": "请求方式"
+        },
+        "title": {
+          "type": "string",
+          "description": "系统模块"
+        },
+        "useTime": {
+          "type": "integer",
+          "format": "int64",
+          "description": "执行时长(毫秒)"
+        },
+        "browser": {
+          "type": "string",
+          "description": "浏览器"
+        },
+        "os": {
+          "type": "string",
+          "description": "操作信息"
+        }
+      },
+      "title": "QueryOperateLogDetailData",
+      "required": [
+        "deptName",
+        "id",
+        "operationIp",
+        "operationName",
+        "operationParams",
+        "operationResponse",
+        "operationStatus",
+        "operationTime",
+        "operationType",
+        "operationUrl",
+        "requestMethod",
+        "title",
+        "useTime",
+        "browser",
+        "os"
+      ]
+    },
+    "QueryOperateLogDetailReq": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "QueryOperateLogDetailReq",
+      "required": [
+        "id"
+      ]
+    },
+    "QueryOperateLogDetailResp": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/definitions/QueryOperateLogDetailData"
+        }
+      },
+      "title": "QueryOperateLogDetailResp",
+      "required": [
+        "code",
+        "message",
+        "data"
+      ]
+    },
+    "QueryOperateLogListData": {
+      "type": "object",
+      "properties": {
+        "deptName": {
+          "type": "string",
+          "description": "部门名称"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "description": "编号"
+        },
+        "operationIp": {
+          "type": "string",
+          "description": "操作地址"
+        },
+        "operationName": {
+          "type": "string",
+          "description": "操作人员"
+        },
+        "operationParams": {
+          "type": "string",
+          "description": "请求参数"
+        },
+        "operationResponse": {
+          "type": "string",
+          "description": "响应参数"
+        },
+        "operationStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "操作状态"
+        },
+        "operationTime": {
+          "type": "string",
+          "description": "操作时间"
+        },
+        "operationType": {
+          "type": "string",
+          "description": "操作类型"
+        },
+        "operationUrl": {
+          "type": "string",
+          "description": "操作方法"
+        },
+        "requestMethod": {
+          "type": "string",
+          "description": "请求方式"
+        },
+        "title": {
+          "type": "string",
+          "description": "系统模块"
+        },
+        "useTime": {
+          "type": "integer",
+          "format": "int64",
+          "description": "执行时长(毫秒)"
+        },
+        "browser": {
+          "type": "string",
+          "description": "浏览器"
+        },
+        "os": {
+          "type": "string",
+          "description": "操作信息"
+        }
+      },
+      "title": "QueryOperateLogListData",
+      "required": [
+        "deptName",
+        "id",
+        "operationIp",
+        "operationName",
+        "operationParams",
+        "operationResponse",
+        "operationStatus",
+        "operationTime",
+        "operationType",
+        "operationUrl",
+        "requestMethod",
+        "title",
+        "useTime",
+        "browser",
+        "os"
+      ]
+    },
+    "QueryOperateLogListReq": {
+      "type": "object",
+      "properties": {
+        "current": {
+          "type": "integer",
+          "format": "int64",
+          "default": "1",
+          "description": "第几页"
+        },
+        "pageSize": {
+          "type": "integer",
+          "format": "int64",
+          "default": "20",
+          "description": "每页的数量"
+        },
+        "deptName": {
+          "type": "string",
+          "description": "部门名称"
+        },
+        "operationIp": {
+          "type": "string",
+          "description": "操作地址"
+        },
+        "operationName": {
+          "type": "string",
+          "description": "操作人员"
+        },
+        "operationStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "操作状态"
+        },
+        "operationType": {
+          "type": "string",
+          "description": "操作类型"
+        },
+        "operationUrl": {
+          "type": "string",
+          "description": "操作方法"
+        },
+        "title": {
+          "type": "string",
+          "description": "系统模块"
+        },
+        "browser": {
+          "type": "string",
+          "description": "浏览器"
+        },
+        "os": {
+          "type": "string",
+          "description": "操作信息"
+        }
+      },
+      "title": "QueryOperateLogListReq",
+      "required": [
+        "current",
+        "pageSize",
+        "browser",
+        "os"
+      ]
+    },
+    "QueryOperateLogListResp": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "current": {
+          "type": "integer",
+          "format": "int64",
+          "default": "1"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/QueryOperateLogListData"
+          }
+        },
+        "pageSize": {
+          "type": "integer",
+          "format": "int64",
+          "default": "20"
+        },
+        "success": {
+          "type": "boolean",
+          "format": "boolean"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "QueryOperateLogListResp",
+      "required": [
+        "code",
+        "message",
+        "current",
+        "data",
+        "pageSize",
+        "success",
+        "total"
+      ]
+    },
+    "QueryPostDetailData": {
+      "type": "object",
+      "properties": {
+        "createBy": {
+          "type": "string",
+          "description": "创建者"
+        },
+        "createTime": {
+          "type": "string",
+          "description": "创建时间"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "description": "编号"
+        },
+        "postCode": {
+          "type": "string",
+          "description": "岗位编码"
+        },
+        "postName": {
+          "type": "string",
+          "description": "岗位名称"
+        },
+        "postSort": {
+          "type": "integer",
+          "format": "int32",
+          "description": "岗位排序"
+        },
+        "postStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "岗位状态"
+        },
+        "remark": {
+          "type": "string",
+          "description": "备注信息"
+        },
+        "updateBy": {
+          "type": "string",
+          "description": "更新者"
+        },
+        "updateTime": {
+          "type": "string",
+          "description": "更新时间"
+        }
+      },
+      "title": "QueryPostDetailData",
+      "required": [
+        "createBy",
+        "createTime",
+        "id",
+        "postCode",
+        "postName",
+        "postSort",
+        "postStatus",
+        "remark",
+        "updateBy",
+        "updateTime"
+      ]
+    },
+    "QueryPostDetailReq": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "QueryPostDetailReq",
+      "required": [
+        "id"
+      ]
+    },
+    "QueryPostDetailResp": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/definitions/QueryPostDetailData"
+        }
+      },
+      "title": "QueryPostDetailResp",
+      "required": [
+        "code",
+        "message",
+        "data"
+      ]
+    },
+    "QueryPostListData": {
+      "type": "object",
+      "properties": {
+        "createBy": {
+          "type": "string",
+          "description": "创建者"
+        },
+        "createTime": {
+          "type": "string",
+          "description": "创建时间"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "description": "编号"
+        },
+        "postCode": {
+          "type": "string",
+          "description": "岗位编码"
+        },
+        "postName": {
+          "type": "string",
+          "description": "岗位名称"
+        },
+        "postSort": {
+          "type": "integer",
+          "format": "int32",
+          "description": "岗位排序"
+        },
+        "postStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "岗位状态"
+        },
+        "remark": {
+          "type": "string",
+          "description": "备注信息"
+        },
+        "updateBy": {
+          "type": "string",
+          "description": "更新者"
+        },
+        "updateTime": {
+          "type": "string",
+          "description": "更新时间"
+        }
+      },
+      "title": "QueryPostListData",
+      "required": [
+        "createBy",
+        "createTime",
+        "id",
+        "postCode",
+        "postName",
+        "postSort",
+        "postStatus",
+        "remark",
+        "updateBy",
+        "updateTime"
+      ]
+    },
+    "QueryPostListReq": {
+      "type": "object",
+      "properties": {
+        "current": {
+          "type": "integer",
+          "format": "int64",
+          "default": "1",
+          "description": "第几页"
+        },
+        "pageSize": {
+          "type": "integer",
+          "format": "int64",
+          "default": "20",
+          "description": "每页的数量"
+        },
+        "postCode": {
+          "type": "string",
+          "description": "岗位编码"
+        },
+        "postName": {
+          "type": "string",
+          "description": "岗位名称"
+        },
+        "postStatus": {
+          "type": "integer",
+          "format": "int32",
+          "default": "2",
+          "description": "岗位状态"
+        }
+      },
+      "title": "QueryPostListReq",
+      "required": [
+        "current",
+        "pageSize",
+        "postStatus"
+      ]
+    },
+    "QueryPostListResp": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "current": {
+          "type": "integer",
+          "format": "int64",
+          "default": "1"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/QueryPostListData"
+          }
+        },
+        "pageSize": {
+          "type": "integer",
+          "format": "int64",
+          "default": "20"
+        },
+        "success": {
+          "type": "boolean",
+          "format": "boolean"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "QueryPostListResp",
+      "required": [
+        "code",
+        "message",
+        "current",
+        "data",
+        "pageSize",
+        "success",
+        "total"
+      ]
+    },
+    "QueryRoleDetailData": {
+      "type": "object",
+      "properties": {
+        "createBy": {
+          "type": "string",
+          "description": "创建者"
+        },
+        "createTime": {
+          "type": "string",
+          "description": "创建时间"
+        },
+        "dataScope": {
+          "type": "integer",
+          "format": "int32",
+          "description": "数据权限"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "description": "编号"
+        },
+        "isAdmin": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否超级管理员"
+        },
+        "remark": {
+          "type": "string",
+          "description": "备注"
+        },
+        "roleKey": {
+          "type": "string",
+          "description": "权限字符"
+        },
+        "roleName": {
+          "type": "string",
+          "description": "角色名称"
+        },
+        "roleSort": {
+          "type": "integer",
+          "format": "int32",
+          "description": "角色排序"
+        },
+        "roleStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "角色状态"
+        },
+        "updateBy": {
+          "type": "string",
+          "description": "更新者"
+        },
+        "updateTime": {
+          "type": "string",
+          "description": "更新时间"
+        }
+      },
+      "title": "QueryRoleDetailData",
+      "required": [
+        "createBy",
+        "createTime",
+        "dataScope",
+        "id",
+        "isAdmin",
+        "remark",
+        "roleKey",
+        "roleName",
+        "roleSort",
+        "roleStatus",
+        "updateBy",
+        "updateTime"
+      ]
+    },
+    "QueryRoleDetailReq": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "QueryRoleDetailReq",
+      "required": [
+        "id"
+      ]
+    },
+    "QueryRoleDetailResp": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/definitions/QueryRoleDetailData"
+        }
+      },
+      "title": "QueryRoleDetailResp",
+      "required": [
+        "code",
+        "message",
+        "data"
+      ]
+    },
+    "QueryRoleListData": {
+      "type": "object",
+      "properties": {
+        "createBy": {
+          "type": "string",
+          "description": "创建者"
+        },
+        "createTime": {
+          "type": "string",
+          "description": "创建时间"
+        },
+        "dataScope": {
+          "type": "integer",
+          "format": "int32",
+          "description": "数据权限"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "description": "编号"
+        },
+        "isAdmin": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否超级管理员"
+        },
+        "remark": {
+          "type": "string",
+          "description": "备注"
+        },
+        "roleKey": {
+          "type": "string",
+          "description": "权限字符"
+        },
+        "roleName": {
+          "type": "string",
+          "description": "角色名称"
+        },
+        "roleSort": {
+          "type": "integer",
+          "format": "int32",
+          "description": "角色排序"
+        },
+        "roleStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "角色状态"
+        },
+        "updateBy": {
+          "type": "string",
+          "description": "更新者"
+        },
+        "updateTime": {
+          "type": "string",
+          "description": "更新时间"
+        }
+      },
+      "title": "QueryRoleListData",
+      "required": [
+        "createBy",
+        "createTime",
+        "dataScope",
+        "id",
+        "isAdmin",
+        "remark",
+        "roleKey",
+        "roleName",
+        "roleSort",
+        "roleStatus",
+        "updateBy",
+        "updateTime"
+      ]
+    },
+    "QueryRoleListReq": {
+      "type": "object",
+      "properties": {
+        "current": {
+          "type": "integer",
+          "format": "int64",
+          "default": "1",
+          "description": "第几页"
+        },
+        "pageSize": {
+          "type": "integer",
+          "format": "int64",
+          "default": "20",
+          "description": "每页的数量"
+        },
+        "isAdmin": {
+          "type": "integer",
+          "format": "int32",
+          "default": "2",
+          "description": "是否超级管理员"
+        },
+        "roleKey": {
+          "type": "string",
+          "description": "权限字符"
+        },
+        "roleName": {
+          "type": "string",
+          "description": "角色名称"
+        },
+        "roleStatus": {
+          "type": "integer",
+          "format": "int32",
+          "default": "2",
+          "description": "角色状态"
+        }
+      },
+      "title": "QueryRoleListReq",
+      "required": [
+        "current",
+        "pageSize",
+        "isAdmin",
+        "roleStatus"
+      ]
+    },
+    "QueryRoleListResp": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "current": {
+          "type": "integer",
+          "format": "int64",
+          "default": "1"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/QueryRoleListData"
+          }
+        },
+        "pageSize": {
+          "type": "integer",
+          "format": "int64",
+          "default": "20"
+        },
+        "success": {
+          "type": "boolean",
+          "format": "boolean"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "QueryRoleListResp",
+      "required": [
+        "code",
+        "message",
+        "current",
+        "data",
+        "pageSize",
+        "success",
+        "total"
+      ]
+    },
+    "QueryRoleMenuListReq": {
+      "type": "object",
+      "properties": {
+        "roleId": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "QueryRoleMenuListReq",
+      "required": [
+        "roleId"
+      ]
+    },
+    "QueryRoleMenuListResp": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/definitions/RoleMenuListData"
+        }
+      },
+      "title": "QueryRoleMenuListResp",
+      "required": [
+        "code",
+        "message",
+        "data"
+      ]
+    },
+    "QueryRoleUserListData": {
+      "type": "object",
+      "properties": {
+        "avatar": {
+          "type": "string",
+          "description": "头像"
+        },
+        "createBy": {
+          "type": "string",
+          "description": "创建者"
+        },
+        "createTime": {
+          "type": "string",
+          "description": "创建时间"
+        },
+        "deptId": {
+          "type": "integer",
+          "format": "int64",
+          "description": "部门id"
+        },
+        "email": {
+          "type": "string",
+          "description": "邮箱"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "description": "编号"
+        },
+        "loginIp": {
+          "type": "string",
+          "description": "登录ip"
+        },
+        "loginTime": {
+          "type": "string",
+          "description": "登录时间"
+        },
+        "mobile": {
+          "type": "string",
+          "description": "手机号"
+        },
+        "nickName": {
+          "type": "string",
+          "description": "昵称"
+        },
+        "remark": {
+          "type": "string",
+          "description": "备注信息"
+        },
+        "updateBy": {
+          "type": "string",
+          "description": "更新者"
+        },
+        "updateTime": {
+          "type": "string",
+          "description": "更新时间"
+        },
+        "userName": {
+          "type": "string",
+          "description": "用户名"
+        },
+        "userStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "帐号状态（0正常 1停用）"
+        }
+      },
+      "title": "QueryRoleUserListData",
+      "required": [
+        "avatar",
+        "createBy",
+        "createTime",
+        "deptId",
+        "email",
+        "id",
+        "loginIp",
+        "loginTime",
+        "mobile",
+        "nickName",
+        "remark",
+        "updateBy",
+        "updateTime",
+        "userName",
+        "userStatus"
+      ]
+    },
+    "QueryRoleUserListReq": {
+      "type": "object",
+      "properties": {
+        "current": {
+          "type": "integer",
+          "format": "int64",
+          "default": "1",
+          "description": "第几页"
+        },
+        "pageSize": {
+          "type": "integer",
+          "format": "int64",
+          "default": "20",
+          "description": "每页的数量"
+        },
+        "roleId": {
+          "type": "integer",
+          "format": "int64",
+          "description": "角色id"
+        },
+        "isExist": {
+          "type": "integer",
+          "format": "int64",
+          "description": "角色是否已经拥有用户"
+        },
+        "mobile": {
+          "type": "string",
+          "description": "手机号"
+        },
+        "userName": {
+          "type": "string",
+          "description": "昵称"
+        }
+      },
+      "title": "QueryRoleUserListReq",
+      "required": [
+        "current",
+        "pageSize",
+        "roleId",
+        "isExist"
+      ]
+    },
+    "QueryRoleUserListResp": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "current": {
+          "type": "integer",
+          "format": "int64",
+          "default": "1"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/QueryRoleUserListData"
+          }
+        },
+        "pageSize": {
+          "type": "integer",
+          "format": "int64",
+          "default": "20"
+        },
+        "success": {
+          "type": "boolean",
+          "format": "boolean"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "QueryRoleUserListResp",
+      "required": [
+        "code",
+        "message",
+        "current",
+        "data",
+        "pageSize",
+        "success",
+        "total"
+      ]
+    },
+    "QueryStatisticsLoginLogData": {
+      "type": "object",
+      "properties": {
+        "dayLoginCount": {
+          "type": "integer",
+          "format": "int32",
+          "description": "查询当天登录人数（根据IP）"
+        },
+        "weekLoginCount": {
+          "type": "integer",
+          "format": "int32",
+          "description": "统计当前周登录人数（根据IP）"
+        },
+        "monthLoginCount": {
+          "type": "integer",
+          "format": "int32",
+          "description": "统计当前月登录人数（根据IP）"
+        }
+      },
+      "title": "QueryStatisticsLoginLogData",
+      "required": [
+        "dayLoginCount",
+        "weekLoginCount",
+        "monthLoginCount"
+      ]
+    },
+    "QueryStatisticsLoginLogResp": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/definitions/QueryStatisticsLoginLogData"
+        }
+      },
+      "title": "QueryStatisticsLoginLogResp",
+      "required": [
+        "code",
+        "message",
+        "data"
+      ]
+    },
+    "QueryUserDetailData": {
+      "type": "object",
+      "properties": {
+        "avatar": {
+          "type": "string",
+          "description": "头像"
+        },
+        "createBy": {
+          "type": "string",
+          "description": "创建者"
+        },
+        "createTime": {
+          "type": "string",
+          "description": "创建时间"
+        },
+        "deptId": {
+          "type": "integer",
+          "format": "int64",
+          "description": "部门id"
+        },
+        "email": {
+          "type": "string",
+          "description": "邮箱"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "description": "编号"
+        },
+        "loginIp": {
+          "type": "string",
+          "description": "登录ip"
+        },
+        "loginTime": {
+          "type": "string",
+          "description": "登录时间"
+        },
+        "mobile": {
+          "type": "string",
+          "description": "手机号"
+        },
+        "nickName": {
+          "type": "string",
+          "description": "昵称"
+        },
+        "remark": {
+          "type": "string",
+          "description": "备注信息"
+        },
+        "salt": {
+          "type": "string",
+          "description": "加密盐"
+        },
+        "updateBy": {
+          "type": "string",
+          "description": "更新者"
+        },
+        "updateTime": {
+          "type": "string",
+          "description": "更新时间"
+        },
+        "userName": {
+          "type": "string",
+          "description": "用户名"
+        },
+        "userStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "帐号状态（0正常 1停用）"
+        },
+        "postIds": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "description": "部门id"
+        }
+      },
+      "title": "QueryUserDetailData",
+      "required": [
+        "avatar",
+        "createBy",
+        "createTime",
+        "deptId",
+        "email",
+        "id",
+        "loginIp",
+        "loginTime",
+        "mobile",
+        "nickName",
+        "remark",
+        "salt",
+        "updateBy",
+        "updateTime",
+        "userName",
+        "userStatus",
+        "postIds"
+      ]
+    },
+    "QueryUserDetailReq": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "QueryUserDetailReq",
+      "required": [
+        "id"
+      ]
+    },
+    "QueryUserDetailResp": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/definitions/QueryUserDetailData"
+        }
+      },
+      "title": "QueryUserDetailResp",
+      "required": [
+        "code",
+        "message",
+        "data"
+      ]
+    },
+    "QueryUserListData": {
+      "type": "object",
+      "properties": {
+        "avatar": {
+          "type": "string",
+          "description": "头像"
+        },
+        "createBy": {
+          "type": "string",
+          "description": "创建者"
+        },
+        "createTime": {
+          "type": "string",
+          "description": "创建时间"
+        },
+        "deptId": {
+          "type": "integer",
+          "format": "int64",
+          "description": "部门id"
+        },
+        "email": {
+          "type": "string",
+          "description": "邮箱"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "description": "编号"
+        },
+        "loginIp": {
+          "type": "string",
+          "description": "登录ip"
+        },
+        "loginTime": {
+          "type": "string",
+          "description": "登录时间"
+        },
+        "mobile": {
+          "type": "string",
+          "description": "手机号"
+        },
+        "nickName": {
+          "type": "string",
+          "description": "昵称"
+        },
+        "remark": {
+          "type": "string",
+          "description": "备注信息"
+        },
+        "updateBy": {
+          "type": "string",
+          "description": "更新者"
+        },
+        "updateTime": {
+          "type": "string",
+          "description": "更新时间"
+        },
+        "userName": {
+          "type": "string",
+          "description": "用户名"
+        },
+        "userStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "帐号状态（0正常 1停用）"
+        }
+      },
+      "title": "QueryUserListData",
+      "required": [
+        "avatar",
+        "createBy",
+        "createTime",
+        "deptId",
+        "email",
+        "id",
+        "loginIp",
+        "loginTime",
+        "mobile",
+        "nickName",
+        "remark",
+        "updateBy",
+        "updateTime",
+        "userName",
+        "userStatus"
+      ]
+    },
+    "QueryUserListReq": {
+      "type": "object",
+      "properties": {
+        "current": {
+          "type": "integer",
+          "format": "int64",
+          "default": "1",
+          "description": "第几页"
+        },
+        "pageSize": {
+          "type": "integer",
+          "format": "int64",
+          "default": "20",
+          "description": "每页的数量"
+        },
+        "deptId": {
+          "type": "integer",
+          "format": "int64",
+          "default": "0",
+          "description": "部门id"
+        },
+        "email": {
+          "type": "string",
+          "description": "邮箱"
+        },
+        "mobile": {
+          "type": "string",
+          "description": "手机号"
+        },
+        "nickName": {
+          "type": "string",
+          "description": "昵称"
+        },
+        "userStatus": {
+          "type": "integer",
+          "format": "int32",
+          "default": "2",
+          "description": "帐号状态（0正常 1停用）"
+        }
+      },
+      "title": "QueryUserListReq",
+      "required": [
+        "current",
+        "pageSize",
+        "deptId",
+        "userStatus"
+      ]
+    },
+    "QueryUserListResp": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "current": {
+          "type": "integer",
+          "format": "int64",
+          "default": "1"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/QueryUserListData"
+          }
+        },
+        "pageSize": {
+          "type": "integer",
+          "format": "int64",
+          "default": "20"
+        },
+        "success": {
+          "type": "boolean",
+          "format": "boolean"
+        },
+        "total": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "QueryUserListResp",
+      "required": [
+        "code",
+        "message",
+        "current",
+        "data",
+        "pageSize",
+        "success",
+        "total"
+      ]
+    },
+    "QueryUserRoleListReq": {
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "current": {
+          "type": "integer",
+          "format": "int64",
+          "default": "1"
+        },
+        "pageSize": {
+          "type": "integer",
+          "format": "int64",
+          "default": "20"
+        },
+        "roleName": {
+          "type": "string",
+          "description": " 角色名称"
+        },
+        "roleKey": {
+          "type": "string",
+          "description": "权限字符"
+        }
+      },
+      "title": "QueryUserRoleListReq",
+      "required": [
+        "userId",
+        "current",
+        "pageSize"
+      ]
+    },
+    "QueryUserRoleListResp": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/definitions/UserRoleListData"
+        }
+      },
+      "title": "QueryUserRoleListResp",
+      "required": [
+        "code",
+        "message",
+        "data"
+      ]
+    },
+    "ReSetPasswordReq": {
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "integer",
+          "format": "int64"
+        }
+      },
+      "title": "ReSetPasswordReq",
+      "required": [
+        "userId"
+      ]
+    },
+    "ReSetPasswordResp": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "ReSetPasswordResp",
+      "required": [
+        "code",
+        "message"
+      ]
+    },
+    "RoleListData": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "description": " 编号"
+        },
+        "roleName": {
+          "type": "string",
+          "description": " 角色名称"
+        },
+        "remark": {
+          "type": "string",
+          "description": " 备注"
+        },
+        "createBy": {
+          "type": "string",
+          "description": " 创建人"
+        },
+        "createTime": {
+          "type": "string",
+          "description": " 创建时间"
+        },
+        "updateBy": {
+          "type": "string",
+          "description": " 更新人"
+        },
+        "updateTime": {
+          "type": "string",
+          "description": " 更新时间"
+        },
+        "roleStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": " 状态"
+        }
+      },
+      "title": "RoleListData",
+      "required": [
+        "id",
+        "roleName",
+        "remark",
+        "createBy",
+        "createTime",
+        "updateBy",
+        "updateTime",
+        "roleStatus"
+      ]
+    },
+    "RoleMenuListData": {
+      "type": "object",
+      "properties": {
+        "menuList": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/MenuTreeListData"
+          }
+        },
+        "menuIds": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "title": "RoleMenuListData",
+      "required": [
+        "menuList",
+        "menuIds"
+      ]
+    },
+    "UpdateDeptReq": {
+      "type": "object",
+      "properties": {
+        "deptName": {
+          "type": "string",
+          "description": "部门名称"
+        },
+        "deptSort": {
+          "type": "integer",
+          "format": "int32",
+          "description": "部门排序"
+        },
+        "deptStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "部门状态"
+        },
+        "email": {
+          "type": "string",
+          "description": "邮箱"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "description": "编号"
+        },
+        "leader": {
+          "type": "string",
+          "description": "负责人"
+        },
+        "parentId": {
+          "type": "integer",
+          "format": "int64",
+          "description": "上级机构ID，一级机构为0"
+        },
+        "parentIds": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "description": "上级机构IDs，一级机构为0"
+        },
+        "phone": {
+          "type": "string",
+          "description": "电话号码"
+        },
+        "remark": {
+          "type": "string",
+          "description": "备注信息"
+        }
+      },
+      "title": "UpdateDeptReq",
+      "required": [
+        "deptName",
+        "deptSort",
+        "deptStatus",
+        "email",
+        "id",
+        "leader",
+        "parentId",
+        "parentIds",
+        "phone"
+      ]
+    },
+    "UpdateDeptResp": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "UpdateDeptResp",
+      "required": [
+        "code",
+        "message"
+      ]
+    },
+    "UpdateDeptStatusReq": {
+      "type": "object",
+      "properties": {
+        "deptStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "部门状态"
+        },
+        "deptIds": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "description": "编号"
+        }
+      },
+      "title": "UpdateDeptStatusReq",
+      "required": [
+        "deptStatus",
+        "deptIds"
+      ]
+    },
+    "UpdateDeptStatusResp": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "UpdateDeptStatusResp",
+      "required": [
+        "code",
+        "message"
+      ]
+    },
+    "UpdateDictItemReq": {
+      "type": "object",
+      "properties": {
+        "dictLabel": {
+          "type": "string",
+          "description": "字典标签"
+        },
+        "dictSort": {
+          "type": "integer",
+          "format": "int32",
+          "description": "排序"
+        },
+        "dictStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "字典状态"
+        },
+        "dictType": {
+          "type": "string",
+          "description": "字典类型"
+        },
+        "dictValue": {
+          "type": "string",
+          "description": "字典键值"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "description": "编号"
+        },
+        "isDefault": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否默认  0：否  1：是"
+        },
+        "remark": {
+          "type": "string",
+          "description": "备注信息"
+        }
+      },
+      "title": "UpdateDictItemReq",
+      "required": [
+        "dictLabel",
+        "dictSort",
+        "dictStatus",
+        "dictType",
+        "dictValue",
+        "id",
+        "isDefault"
+      ]
+    },
+    "UpdateDictItemResp": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "UpdateDictItemResp",
+      "required": [
+        "code",
+        "message"
+      ]
+    },
+    "UpdateDictItemStatusReq": {
+      "type": "object",
+      "properties": {
+        "dictStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "字典状态"
+        },
+        "dictIds": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "description": "编号"
+        }
+      },
+      "title": "UpdateDictItemStatusReq",
+      "required": [
+        "dictStatus",
+        "dictIds"
+      ]
+    },
+    "UpdateDictItemStatusResp": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "UpdateDictItemStatusResp",
+      "required": [
+        "code",
+        "message"
+      ]
+    },
+    "UpdateDictTypeReq": {
+      "type": "object",
+      "properties": {
+        "dictName": {
+          "type": "string",
+          "description": "字典名称"
+        },
+        "dictStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "字典状态"
+        },
+        "dictType": {
+          "type": "string",
+          "description": "字典类型"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "description": "编号"
+        },
+        "isSystem": {
+          "type": "integer",
+          "format": "int32",
+          "description": "是否系统预留  0：否  1：是"
+        },
+        "remark": {
+          "type": "string",
+          "description": "备注信息"
+        }
+      },
+      "title": "UpdateDictTypeReq",
+      "required": [
+        "dictName",
+        "dictStatus",
+        "dictType",
+        "id",
+        "isSystem"
+      ]
+    },
+    "UpdateDictTypeResp": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "UpdateDictTypeResp",
+      "required": [
+        "code",
+        "message"
+      ]
+    },
+    "UpdateDictTypeStatusReq": {
+      "type": "object",
+      "properties": {
+        "dictStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "字典状态"
+        },
+        "dictIds": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "description": "编号"
+        }
+      },
+      "title": "UpdateDictTypeStatusReq",
+      "required": [
+        "dictStatus",
+        "dictIds"
+      ]
+    },
+    "UpdateDictTypeStatusResp": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "UpdateDictTypeStatusResp",
+      "required": [
+        "code",
+        "message"
+      ]
+    },
+    "UpdateMenuReq": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "description": "编号"
+        },
+        "backgroundUrl": {
+          "type": "string",
+          "description": "接口地址"
+        },
+        "menuIcon": {
+          "type": "string",
+          "description": "菜单图标"
+        },
+        "menuName": {
+          "type": "string",
+          "description": "菜单名称"
+        },
+        "menuPath": {
+          "type": "string",
+          "description": "前端路由"
+        },
+        "menuPerms": {
+          "type": "string",
+          "description": "权限标识"
+        },
+        "menuSort": {
+          "type": "integer",
+          "format": "int32",
+          "description": "菜单排序"
+        },
+        "menuStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "菜单状态"
+        },
+        "menuType": {
+          "type": "integer",
+          "format": "int32",
+          "description": "类型 0：目录,1：菜单,2：按钮,3：外链"
+        },
+        "parentId": {
+          "type": "integer",
+          "format": "int64",
+          "description": "父菜单ID，一级菜单为0"
+        },
+        "remark": {
+          "type": "string",
+          "description": "备注信息"
+        },
+        "vueComponent": {
+          "type": "string",
+          "description": "vue的页面"
+        },
+        "vueIcon": {
+          "type": "string",
+          "description": "vue的图标"
+        },
+        "vuePath": {
+          "type": "string",
+          "description": "vue系统的path"
+        },
+        "vueRedirect": {
+          "type": "string",
+          "description": "vue的路由重定向"
+        },
+        "isVisible": {
+          "type": "integer",
+          "format": "int32",
+          "default": "1",
+          "description": "是否可见  0：否  1：是"
+        }
+      },
+      "title": "UpdateMenuReq",
+      "required": [
+        "id",
+        "menuName",
+        "isVisible"
+      ]
+    },
+    "UpdateMenuResp": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "UpdateMenuResp",
+      "required": [
+        "code",
+        "message"
+      ]
+    },
+    "UpdateMenuStatusReq": {
+      "type": "object",
+      "properties": {
+        "menuIds": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "description": "编号"
+        },
+        "menuStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "菜单状态"
+        }
+      },
+      "title": "UpdateMenuStatusReq",
+      "required": [
+        "menuIds",
+        "menuStatus"
+      ]
+    },
+    "UpdateMenuStatusResp": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "UpdateMenuStatusResp",
+      "required": [
+        "code",
+        "message"
+      ]
+    },
+    "UpdatePostReq": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "description": "编号"
+        },
+        "postCode": {
+          "type": "string",
+          "description": "岗位编码"
+        },
+        "postName": {
+          "type": "string",
+          "description": "岗位名称"
+        },
+        "postSort": {
+          "type": "integer",
+          "format": "int32",
+          "description": "岗位排序"
+        },
+        "postStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "岗位状态"
+        },
+        "remark": {
+          "type": "string",
+          "description": "备注信息"
+        }
+      },
+      "title": "UpdatePostReq",
+      "required": [
+        "id",
+        "postCode",
+        "postName",
+        "postSort",
+        "postStatus"
+      ]
+    },
+    "UpdatePostResp": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "UpdatePostResp",
+      "required": [
+        "code",
+        "message"
+      ]
+    },
+    "UpdatePostStatusReq": {
+      "type": "object",
+      "properties": {
+        "postIds": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "description": "编号"
+        },
+        "postStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "岗位状态"
+        }
+      },
+      "title": "UpdatePostStatusReq",
+      "required": [
+        "postIds",
+        "postStatus"
+      ]
+    },
+    "UpdatePostStatusResp": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "UpdatePostStatusResp",
+      "required": [
+        "code",
+        "message"
+      ]
+    },
+    "UpdateRoleMenuListReq": {
+      "type": "object",
+      "properties": {
+        "roleId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "menuIds": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "title": "UpdateRoleMenuListReq",
+      "required": [
+        "roleId",
+        "menuIds"
+      ]
+    },
+    "UpdateRoleMenuListResp": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "UpdateRoleMenuListResp",
+      "required": [
+        "code",
+        "message"
+      ]
+    },
+    "UpdateRoleReq": {
+      "type": "object",
+      "properties": {
+        "dataScope": {
+          "type": "integer",
+          "format": "int32",
+          "default": "0",
+          "description": "数据权限"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "description": "编号"
+        },
+        "isAdmin": {
+          "type": "integer",
+          "format": "int32",
+          "default": "0",
+          "description": "是否超级管理员"
+        },
+        "remark": {
+          "type": "string",
+          "description": "备注"
+        },
+        "roleKey": {
+          "type": "string",
+          "description": "权限字符"
+        },
+        "roleName": {
+          "type": "string",
+          "description": "角色名称"
+        },
+        "roleSort": {
+          "type": "integer",
+          "format": "int32",
+          "description": "角色排序"
+        },
+        "roleStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "角色状态"
+        }
+      },
+      "title": "UpdateRoleReq",
+      "required": [
+        "dataScope",
+        "id",
+        "isAdmin",
+        "roleKey",
+        "roleName",
+        "roleSort",
+        "roleStatus"
+      ]
+    },
+    "UpdateRoleResp": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "UpdateRoleResp",
+      "required": [
+        "code",
+        "message"
+      ]
+    },
+    "UpdateRoleStatusReq": {
+      "type": "object",
+      "properties": {
+        "roleIds": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "description": "编号"
+        },
+        "roleStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "角色状态"
+        }
+      },
+      "title": "UpdateRoleStatusReq",
+      "required": [
+        "roleIds",
+        "roleStatus"
+      ]
+    },
+    "UpdateRoleStatusResp": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "UpdateRoleStatusResp",
+      "required": [
+        "code",
+        "message"
+      ]
+    },
+    "UpdateUserReq": {
+      "type": "object",
+      "properties": {
+        "avatar": {
+          "type": "string",
+          "description": "头像"
+        },
+        "deptId": {
+          "type": "integer",
+          "format": "int64",
+          "description": "部门id"
+        },
+        "postIds": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "description": "部门id"
+        },
+        "email": {
+          "type": "string",
+          "description": "邮箱"
+        },
+        "id": {
+          "type": "integer",
+          "format": "int64",
+          "description": "编号"
+        },
+        "mobile": {
+          "type": "string",
+          "description": "手机号"
+        },
+        "nickName": {
+          "type": "string",
+          "description": "昵称"
+        },
+        "remark": {
+          "type": "string",
+          "description": "备注信息"
+        },
+        "userName": {
+          "type": "string",
+          "description": "用户名"
+        },
+        "userStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "帐号状态（0正常 1停用）"
+        }
+      },
+      "title": "UpdateUserReq",
+      "required": [
+        "email",
+        "id",
+        "mobile",
+        "nickName",
+        "userName",
+        "userStatus"
+      ]
+    },
+    "UpdateUserResp": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "UpdateUserResp",
+      "required": [
+        "code",
+        "message"
+      ]
+    },
+    "UpdateUserRoleReq": {
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "integer",
+          "format": "int64"
+        },
+        "roleIds": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "title": "UpdateUserRoleReq",
+      "required": [
+        "userId",
+        "roleIds"
+      ]
+    },
+    "UpdateUserRoleResp": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "UpdateUserRoleResp",
+      "required": [
+        "code",
+        "message"
+      ]
+    },
+    "UpdateUserStatusReq": {
+      "type": "object",
+      "properties": {
+        "UserIds": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "description": "编号"
+        },
+        "userStatus": {
+          "type": "integer",
+          "format": "int32",
+          "description": "帐号状态（0正常 1停用）"
+        }
+      },
+      "title": "UpdateUserStatusReq",
+      "required": [
+        "UserIds",
+        "userStatus"
+      ]
+    },
+    "UpdateUserStatusResp": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        }
+      },
+      "title": "UpdateUserStatusResp",
+      "required": [
+        "code",
+        "message"
+      ]
+    },
+    "UploadResp": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "data": {
+          "type": "string"
+        }
+      },
+      "title": "UploadResp",
+      "required": [
+        "code",
+        "message",
+        "data"
+      ]
+    },
+    "UserInfoData": {
+      "type": "object",
+      "properties": {
+        "avatar": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "menuTree": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ListMenuTree"
+          }
+        },
+        "menuTreeVue": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/ListMenuTreeVue"
+          }
+        }
+      },
+      "title": "UserInfoData",
+      "required": [
+        "avatar",
+        "name",
+        "menuTree",
+        "menuTreeVue"
+      ]
+    },
+    "UserRoleListData": {
+      "type": "object",
+      "properties": {
+        "roleList": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/RoleListData"
+          }
+        },
+        "roleIds": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "title": "UserRoleListData",
+      "required": [
+        "roleList",
+        "roleIds"
+      ]
+    },
+    "userInfoResp": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "data": {
+          "$ref": "#/definitions/UserInfoData"
+        }
+      },
+      "title": "userInfoResp",
+      "required": [
+        "code",
+        "message",
+        "data"
+      ]
+    }
+  },
+  "securityDefinitions": {
+    "apiKey": {
+      "type": "apiKey",
+      "description": "Enter JWT Bearer token **_only_**",
+      "name": "Authorization",
+      "in": "header"
+    }
+  }
+}

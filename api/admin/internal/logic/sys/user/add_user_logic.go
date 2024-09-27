@@ -2,11 +2,6 @@ package user
 
 import (
 	"context"
-	"zero-fox-admin/api/admin/internal/common/errorx"
-	"zero-fox-admin/rpc/sys/sysclient"
-
-	"github.com/zeromicro/go-zero/core/logc"
-	"google.golang.org/grpc/status"
 
 	"zero-fox-admin/api/admin/internal/common/errorx"
 	"zero-fox-admin/api/admin/internal/svc"
