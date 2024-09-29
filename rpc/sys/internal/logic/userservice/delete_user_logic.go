@@ -2,10 +2,14 @@ package userservicelogic
 
 import (
 	"context"
+	"errors"
 
+	"zero-fox-admin/rpc/gen/query"
+	"zero-fox-admin/rpc/sys/internal/logic/common"
 	"zero-fox-admin/rpc/sys/internal/svc"
 	"zero-fox-admin/rpc/sys/sysclient"
 
+	"github.com/zeromicro/go-zero/core/logc"
 	"github.com/zeromicro/go-zero/core/logx"
 )
 
@@ -23,9 +27,40 @@ func NewDeleteUserLogic(ctx context.Context, svcCtx *svc.ServiceContext) *Delete
 	}
 }
 
-// 删除用户信息表
+// DeleteUser 删除用户
+// 1.排除超级管理员
+// 2.删除用户
+// 3.删除用户与角色的关联
 func (l *DeleteUserLogic) DeleteUser(in *sysclient.DeleteUserReq) (*sysclient.DeleteUserResp, error) {
-	// todo: add your logic here and delete this line
+	// 1.排除超级管理员
+	var userIds []int64
+	for _, userId := range in.Ids {
+		if common.IsAdmin(l.ctx, userId, l.svcCtx.DB) {
+			continue
+		}
+		userIds = append(userIds, userId)
+	}
+
+	err := query.Q.Transaction(func(tx *query.Query) error {
+		// 2.删除用户
+		user := tx.SysUser
+		if _, err := user.WithContext(l.ctx).Where(user.ID.In(userIds...)).Delete(); err != nil {
+			return err
+		}
+
+		// 3.删除用户与角色的关联
+		role := tx.SysUserRole
+		if _, err := role.WithContext(l.ctx).Where(role.UserID.In(userIds...)).Delete(); err != nil {
+			return err
+		}
+
+		return nil
+	})
+
+	if err != nil {
+		logc.Errorf(l.ctx, "删除用户异常,参数:%+v,异常:%s", in, err.Error())
+		return nil, errors.New("删除用户异常")
+	}
 
 	return &sysclient.DeleteUserResp{}, nil
 }

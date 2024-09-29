@@ -33,6 +33,13 @@ build: gen_proto copy_config
 	$(GOBUILD) -o target/sys-rpc/sys-rpc -v ./rpc/sys/sys.go
 	$(GOBUILD) -o target/admin-api/admin-api -v ./api/admin/admin.go
 
+dev_sys: 
+	${GOCMD} run ./rpc/sys/sys.go -f ./rpc/sys/etc/sys.yaml
+
+dev_admin: 
+	${GOCMD} run ./api/admin/admin.go -f ./api/admin/etc/admin-api.yaml
+
+
 start: ## 运行目标
 	nohup ./target/sys-rpc/sys-rpc -f ./target/sys-rpc/sys-rpc.yaml  > ./target/sys-rpc/log.txt  &
 	nohup ./target/admin-api/admin-api -f ./target/admin-api/admin-api.yaml  > ./target/admin-api/log.txt &
