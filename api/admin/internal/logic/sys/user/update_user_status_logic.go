@@ -3,10 +3,13 @@ package user
 import (
 	"context"
 
+	"zero-fox-admin/api/admin/internal/common/errorx"
 	"zero-fox-admin/api/admin/internal/svc"
 	"zero-fox-admin/api/admin/internal/types"
+	"zero-fox-admin/rpc/sys/sysclient"
 
 	"github.com/zeromicro/go-zero/core/logx"
+	"google.golang.org/grpc/status"
 )
 
 type UpdateUserStatusLogic struct {
@@ -23,8 +26,20 @@ func NewUpdateUserStatusLogic(ctx context.Context, svcCtx *svc.ServiceContext) *
 	}
 }
 
-func (l *UpdateUserStatusLogic) UpdateUserStatus(req *types.UpdateUserStatusReq) (resp *types.UpdateUserStatusResp, err error) {
-	// todo: add your logic here and delete this line
+func (l *UpdateUserStatusLogic) UpdateUserStatus(req *types.UpdateUserStatusReq) (*types.UpdateUserStatusResp, error) {
+	_, err := l.svcCtx.UserService.UpdateUserStatus(l.ctx, &sysclient.UpdateUserStatusReq{
+		Ids:        req.UserIds,
+		UserStatus: req.UserStatus,
+		UpdateBy:   l.ctx.Value("userName").(string),
+	})
 
-	return
+	if err != nil {
+		s, _ := status.FromError(err)
+		return nil, errorx.NewDefaultError(s.Message())
+	}
+
+	return &types.UpdateUserStatusResp{
+		Code:    "000000",
+		Message: "更新用户状态成功",
+	}, nil
 }

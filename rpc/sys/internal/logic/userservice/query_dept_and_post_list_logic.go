@@ -5,7 +5,7 @@ import (
 
 	"zero-fox-admin/rpc/gen/query"
 	"zero-fox-admin/rpc/sys/internal/logic/common"
-	"zero-fox-admin/rpc/sys/internal/logic/deptservice"
+	deptserviceLogic "zero-fox-admin/rpc/sys/internal/logic/deptservice"
 	"zero-fox-admin/rpc/sys/internal/svc"
 	"zero-fox-admin/rpc/sys/sysclient"
 
@@ -44,7 +44,7 @@ func (l *QueryDeptAndPostListLogic) QueryDeptAndPostList(in *sysclient.QueryDept
 			Id:         item.ID,
 			Leader:     item.Leader,
 			ParentId:   item.ParentID,
-			ParentIds:  deptservice.GetParentIds(item.ParentIds),
+			ParentIds:  deptserviceLogic.GetParentIds(item.ParentIds),
 			Phone:      item.Phone,
 			Remark:     item.Remark,
 			UpdateBy:   item.UpdateBy,

@@ -2,6 +2,8 @@ package deptservicelogic
 
 import (
 	"context"
+	"strconv"
+	"strings"
 
 	"zero-fox-admin/rpc/sys/internal/svc"
 	"zero-fox-admin/rpc/sys/sysclient"
@@ -28,4 +30,16 @@ func (l *QueryDeptListLogic) QueryDeptList(in *sysclient.QueryDeptListReq) (*sys
 	// todo: add your logic here and delete this line
 
 	return &sysclient.QueryDeptListResp{}, nil
+}
+
+// GetParentIds 获取父级ids
+func GetParentIds(parentIdsStr string) []int64 {
+	var parentIds []int64
+	if len(parentIdsStr) > 0 {
+		for _, i := range strings.Split(parentIdsStr, ",") {
+			p, _ := strconv.ParseInt(i, 10, 64)
+			parentIds = append(parentIds, p)
+		}
+	}
+	return parentIds
 }
